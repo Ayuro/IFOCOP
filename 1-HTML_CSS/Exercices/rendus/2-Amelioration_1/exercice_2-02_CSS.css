@@ -1,0 +1,11 @@
+strong {
+    color: purple;
+}
+
+p>strong {
+    color: darkcyan;
+}
+
+cite>strong {
+    color: darkred;
+}

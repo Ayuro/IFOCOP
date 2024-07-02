@@ -1,0 +1,17 @@
+#pborder {
+    border: 2px solid transparent;
+}
+
+#phover:hover {
+    background-color: lightsalmon;
+}
+
+#pborder:hover {
+    border: 2px solid darkred;
+}
+
+#ptrunk:hover {
+    height: 50px;
+    width: 50%;
+    overflow: hidden;
+}

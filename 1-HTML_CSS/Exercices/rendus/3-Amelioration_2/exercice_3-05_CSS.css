@@ -1,0 +1,20 @@
+div {
+    height: 150px;
+    width: 150px;
+}
+
+#margeSimpson {
+    background-color: aqua;
+    margin: 10px 32px 12px 20px;
+}
+
+#margenpad {
+    background-color: blueviolet;
+    margin: 50px 13px 24px 10px;
+    padding: 10px 20px 30px 40px;
+}
+
+#pudding {
+    background-color: blanchedalmond;
+    padding: 40px 30px 20px 10px;
+}

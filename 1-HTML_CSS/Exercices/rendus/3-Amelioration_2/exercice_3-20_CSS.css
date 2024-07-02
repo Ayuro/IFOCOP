@@ -1,0 +1,7 @@
+h1 {
+    box-shadow: 10px 5px 5px pink;
+}
+
+p {
+    box-shadow: inset 5px 1.5px 1.5px red;
+}

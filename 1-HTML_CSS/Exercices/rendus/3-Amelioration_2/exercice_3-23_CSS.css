@@ -1,0 +1,11 @@
+img {
+    display: none;
+}
+
+#pOne:hover img {
+    display: block;
+}
+
+#pTwo:hover img {
+    display: block;
+}

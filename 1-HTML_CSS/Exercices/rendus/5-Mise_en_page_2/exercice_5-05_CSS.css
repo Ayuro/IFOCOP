@@ -1,0 +1,40 @@
+body {
+    margin: 0;
+}
+
+header {
+    background-color:  #729fcf;
+    text-align: center;
+}
+
+h1 {
+    margin-top: 0;
+    color: white;
+    text-transform: uppercase;
+}
+
+h2 {
+    margin-bottom: 0;
+    color: white;
+}
+
+nav {
+    margin: 0;
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color:  #729fcf;
+    color: white;
+}
+
+ul {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0;
+    padding: 0 10%;
+}
+
+li {
+
+    list-style-type: none;
+}

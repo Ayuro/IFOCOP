@@ -1,0 +1,162 @@
+body {
+    margin: 0;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    margin: 0 1% 2rem;
+    background-color: #fff6e5;
+    color: #ffa500;
+    border: #ffa500;
+    border-style: solid;
+    text-align: center;
+    border-radius: 0 0 50px 50px;
+}
+
+ul {
+    display: flex;
+    margin-top: 0;
+    padding: 0;
+    justify-content: space-between;
+}
+
+li {
+    background-color: #ffa500;
+    border-radius: 4rem;
+    margin: 0 3%;
+    padding: .5rem .8rem;
+    width: 40%;
+    text-align: center;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+h2 {
+    color: #ffa500;
+}
+
+section {
+    margin-left: .5rem;
+}
+
+aside {
+    display: flex;
+    flex-direction: column;
+}
+
+div {
+    display: flex;
+    position: relative;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    overflow:hidden;
+}
+
+div>p {
+    position: absolute;
+    bottom: -16px;
+    width: 100%;
+    background-color: white;
+    opacity: 0.8;
+    text-align: center;
+}
+
+.un {
+    background-image: url(S1.jpg);
+}
+
+.deux {
+    background-image: url(symbioz.jpg);
+}
+
+.trois {
+    background-image: url(mercedes.jpg);
+}
+
+.quatre {
+    background-image: url(e-legend.jpg);
+}
+
+footer {
+    background-color: #ffa500;
+    color: white;
+    text-align: center;
+}
+
+@media screen and (min-width: 1000px) {
+    section {
+        display: flex;
+    }
+    section>article {
+        flex-basis: 50%;
+        margin: 1%;
+    }
+    aside {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    div {
+        height: 250px;
+    }
+    .un {
+        order: 2;
+        background-position: center;
+        flex-basis: 100%;
+    }
+    .deux {
+        order: 1;
+        flex-basis: 50%;
+    }
+    .trois {
+        order: 3;
+        background-position: center;
+        flex-basis: 100%;
+    }
+    .quatre {
+        flex-basis: 50%;
+    }
+}
+
+@media screen and (min-width: 700px) and (max-width: 999px) {
+
+    aside {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    div {
+        height: 250px;
+    }
+    .un {
+        flex-basis: 45%;
+    }
+    .deux {
+        flex-basis: 55%;
+    }
+    .trois {
+        flex-basis: 55%;
+    }
+    .quatre {
+        flex-basis: 45%;
+    }
+}
+
+@media screen and (max-width: 699px) {
+    aside {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+    div {
+        flex-basis: auto;
+        height: 150px;
+    }
+
+}

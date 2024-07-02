@@ -1,0 +1,16 @@
+h1 {
+    background-image: url(imgEx_3-09.jpg);
+    background-repeat: no-repeat;
+    background-size: 150px;
+}
+
+p {
+    background-image: url(../2-Amelioration_1/imgExo07-01.jpg);
+    background-repeat: repeat;
+}
+
+body {
+    background-image: url(../1-Premiers_pas/ex7png.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}

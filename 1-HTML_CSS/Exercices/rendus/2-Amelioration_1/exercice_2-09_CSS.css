@@ -1,0 +1,20 @@
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+h2 {
+    text-align: right;
+}
+
+#demePara {
+    line-height: 50px;
+}
+
+#demehdeux {
+    letter-spacing: 10px;
+}
+
+#rature {
+    text-decoration-line: line-through;
+}

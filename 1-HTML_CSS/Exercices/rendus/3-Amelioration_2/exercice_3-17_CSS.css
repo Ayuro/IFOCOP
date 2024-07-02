@@ -1,0 +1,17 @@
+table {
+    border: 5px solid gold;
+}
+
+td {
+    border: 1px solid green;
+}
+
+th {
+    border: 1px solid darkblue;
+    color: white;
+    background-color: darkred;
+}
+
+tfoot {
+    font-weight: bold;
+}
