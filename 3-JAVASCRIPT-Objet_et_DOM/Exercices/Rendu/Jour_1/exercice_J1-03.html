@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JavaScript & DOM : Les Objets - Exercice 3</title>
+    <script>
+      // Énoncé :
+      /*
+      1. Dans les exercices de JavaScript "procédural" vous avez créé plusieurs fonctions.
+      Vous devez regrouper toutes ces fonctions (au moins 5 d’entre-elles) dans un objet littéral.
+      Déclarez un objet dans lequel chaque propriété contiendra une fonction parmi celles créées précédemment.
+      */
+
+      /*
+      2. Exécutez chacune des méthodes créés dans cet objet pour les tester.
+      */
+
+      /*
+      3. Déclarez 1 objet littéral qui contient :
+
+      -> 1 propriété qui contient une méthode (fonction dans une propriété) :
+        - qui prend en argument 1 nombre.
+        - qui affiche ce nombre dans une une boite de dialogue.
+        - qui RETOURNE ce nombre multiplié par 100.
+      -> Exécutez cette méthode et AFFICHEZ la VALEUR DE RETOUR dans une boite de dialogue.
+
+      -> 1 propriété qui contient une méthode :
+        - qui prend en argument 1 texte.
+        - qui affiche ce texte dans une boite de dialogue.
+        - qui RETOURNE ce texte concaténé avec la chaîne de caractères 'hello'.
+      -> Exécutez cette méthode et AFFICHEZ la VALEUR DE RETOUR dans une boite de dialogue.
+
+      -> 1 propriété qui contient une méthode :
+        - qui prend en argument un tableau de 3 éléments.
+        - qui affiche le contenu à l'index 1
+        - qui remplace ce que contient l'index 1 par ce qui est contenu dans l'index 2.
+        - qui RETOURNE ce tableau de 3 éléments modifié.
+      -> Exécutez cette méthode et AFFICHEZ la valeur du 2è index de la VALEUR DE RETOUR dans une boite de dialogue.
+
+      -> 1 propriété qui contient une méthode :
+        - qui prend en argument un objet de 5 propriétés qui contiennent chacune un nombre.
+        - qui met dans la 4è  propriété la somme de chacun des nombre de chacune des propriétés.
+        - qui RETOURNE 1 objet de 5 propriétés.
+      -> Exécutez cette méthode et AFFICHEZ la valeur de la 4è propriété de la VALEUR RETOURNÉE dans une boite de dialogue.
+      */
+     "use strict";
+
+    // ---------------- Point 1 et 2 ----------------
+     var multiFunctions = {
+        func1: function() {
+            alert('Ceci est ma première fonction, elle affiche juste ce message');
+        },
+        func2: function() {
+            var i = 0;
+            while (i<5) {
+                i++;
+            };
+            alert('Cette fonction vient d\'incrémenter i... de 0 à ' + i);
+        },
+        func3: function() {
+            var j;
+            for (j=0;j<5;j++){
+                alert('Cette fonction affiche les incrémentation de i = ' + j);
+            };
+        },
+        // name: prompt('Comment t\'appel tu?'),
+        func4: function(name) {
+            alert('Bonjour ' + name);
+            multiFunctions.func5();
+        },
+        func5: function() {
+            alert('Et là j\'ai juste call cette fonction via la précédente.');
+        },
+     }
+
+    //  multiFunctions.func1();
+    //  multiFunctions.func2();
+    //  multiFunctions.func3();
+    //  multiFunctions.func4(multiFunctions.name);
+
+    // ---------------- Point 3 ----------------
+    var ft_monObjet = {
+        ft_takeNb: function(nb) {
+            if (isNaN(parseFloat(nb)) == false) {
+                alert(nb);
+                return(nb*100);
+            } else {
+                alert('Ceci n\'est pas un nombre');
+            }
+        },
+        ft_takeString: function(str) {
+            alert(str);
+            return('Hello ' +  str);
+        },
+        tableau: ['index 0', 'index 1', 'index 2'],
+        ft_takeTab: function(tab) {
+            alert(tab[1]);
+            tab[1] = tab[2];
+            return(tab);
+        },
+        ft_monObjet2: {
+            un: 1,
+            deux: 2,
+            trois: 3,
+            quatre: 4,
+            cinq: 5,
+        },
+        ft_takeObject: function(obj) {
+            obj.quatre = obj.quatre + obj.cinq + obj.un + obj.deux + obj.trois;
+            return(obj);
+        }
+
+    };
+    // alert(ft_monObjet.ft_takeNb(prompt('Donne moi un nombre')));
+    // alert(ft_monObjet.ft_takeString(prompt('Quel est ton nom?')));
+    // alert(ft_monObjet.ft_takeTab(ft_monObjet.tableau)[1]);
+    alert(ft_monObjet.ft_takeObject(ft_monObjet.ft_monObjet2).quatre);
+
+
+    </script>
+  </head>
+  <body>
+    <h1>Titre principal</h1>
+    <ul>
+      <li>Premier point</li>
+      <li>Deuxième point</li>
+      <li>Troisième point</li>
+    </ul>
+    <div>
+      <h2><span>1.</span> Titre de la première section</h2>
+      <p><span>1.1.</span> Premier paragraphe de la première section.</p>
+      <p><span>1.2.</span> Deuxième paragraphe de la deuxième section.</p>
+    </div>
+    <div>
+      <h2><span>2.</span> Titre de la deuxième section</h2>
+      <p><span>2.1.</span> Premier paragraphe de la deuxième section.</p>
+      <p><span>2.2.</span> Deuxième paragraphe de la deuxième section.</p>
+    </div>
+    <div>
+      <h2><span>3.</span> Titre de la troisième section</h2>
+      <p><span>3.1.</span> Premier paragraphe de la troisième section.</p>
+      <p><span>3.2.</span> Deuxième paragraphe de la troisième section.</p>
+    </div>
+  </body>
+</html>
