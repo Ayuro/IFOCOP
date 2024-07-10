@@ -23,8 +23,8 @@ export default class Map {
     };
 
     display() {
-        for (let square of this.listSquare) {
-            game.display(square);
+        for (let mySquare of this.listSquare) {
+            mySquare.display();
         };
     };
 };
