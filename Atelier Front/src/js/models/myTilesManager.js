@@ -6,7 +6,7 @@ export default class MyTilesManager {
     }
 
     async loadFile(folder, file, elementX, elementY) {
-        let result = await fetch(`./src/tiles/${folder}/${file}.png`); 
+        let result = await fetch(`./src/tiles/${folder}/${file}.png`);
         this.listFile[file] = {
             full: await createImageBitmap(await result.blob()), 
             listItem: []

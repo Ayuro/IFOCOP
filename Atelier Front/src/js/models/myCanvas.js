@@ -22,11 +22,10 @@ export default class myCanvas {
         this.stepX = this.width / size.width;
         this.stepY = this.height / size.height;
     }
-    
+
     draw(file, tile, position) {
         let image = Tiles.get(file, tile);
-        this.context.drawImage(
-            image,
+        this.context.drawImage(image,
             0,
             0,
             image.width,
@@ -34,7 +33,23 @@ export default class myCanvas {
             position.x * this.stepX,
             position.y * this.stepY,
             this.stepX,
-            this.stepY
-        )
+            this.stepY)
+    }
+
+    drawPixel(file, tile, pixel) {
+        let image = Tiles.get(file, tile);
+        this.context.drawImage(image,
+            0,
+            0,
+            image.width,
+            image.height,
+            pixel.x,
+            pixel.y,
+            this.stepX,
+            this.stepY)
+    }
+
+    clear() {
+        this.context.clearRect(0, 0 , this.element.width, this.element.height);
     }
 }

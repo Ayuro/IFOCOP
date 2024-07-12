@@ -2,8 +2,7 @@
 
 export default class mySquare {
     constructor(x, y, tile) {
-        this.x = x;
-        this.y = y;
+        this.position = {x: x, y: y};
         this.tile = tile;
 
         switch(Math.floor(Math.random() * 10)) {
@@ -25,19 +24,16 @@ export default class mySquare {
             case 9:
                 this.tile = {namespace: "MAP", key: "BUSH"};
                 break;
-            case 10:
-                this.tile = {namespace: "MAP", key: "WATER"};
-                break;
         };
     };
 
-    display() {
+    display(canvas) {
         if(this.tile.key == "BUSH") {
-            game.canvas.draw("tiles", {namespace: "MAP", key: "GRASS"}, {x: this.x, y: this.y});
+            canvas.draw("tiles", {namespace: "MAP", key: "GRASS"}, {x: this.position.x, y: this.position.y});
         }
         if(this.tile.key == "TREE") {
-            game.canvas.draw("tiles", {namespace: "MAP", key: "UPTREE"}, {x: this.x, y: this.y - 1});
+            canvas.draw("tiles", {namespace: "MAP", key: "UPTREE"}, {x: this.position.x, y: this.position.y - 1});
         }
-        game.canvas.draw("tiles", this.tile, {x: this.x, y: this.y});
+        canvas.draw("tiles", this.tile, {x: this.position.x, y: this.position.y});
     };
 }
