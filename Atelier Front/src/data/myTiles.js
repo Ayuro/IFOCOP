@@ -1,5 +1,7 @@
 "use strict";
 
+/** CODIFICATION DES TUILES (TILES) ET RENVOI DE LA BONNE AFIN DE CREER LA MAP ET RENVOYER LE MOUVEMENT DU PERSO **/
+
 export default class Tiles {
     static get(file, tile) {
         return game.tileManager.listFile[file].listItem[this[tile.namespace][tile.key]];

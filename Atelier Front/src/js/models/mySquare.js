@@ -1,6 +1,8 @@
 "use strict";
 
-export default class mySquare {
+/** ASSIGNATION ALEATOIRE DES TUILES DE LA MAP POUR CHAQUE COORDONEES ET DISPLAY **/
+
+export default class MySquare {
     constructor(x, y, tile) {
         this.position = {x: x, y: y};
         this.tile = tile;

@@ -1,10 +1,12 @@
 "use strict";
 
-import myCanvas from "./myCanvas.js";
+import MyCanvas from "./myCanvas.js";
+
+/** GESTION DES CLIC SUR LE CANVAS PERSO **/
 
 export default class MyClickManager{
     constructor(size){
-        this.canvas = new myCanvas();
+        this.canvas = new MyCanvas();
         this.canvas.setArea(size);
         this.canvas.element.classList.add("top");
 

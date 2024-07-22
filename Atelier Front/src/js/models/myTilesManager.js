@@ -1,5 +1,7 @@
 "use strict";
 
+/** CHARGEMENT DES TUILES A PARTIR DE L'IMAGE **/
+
 export default class MyTilesManager {
     constructor() {
         this.listFile = {};

@@ -2,7 +2,9 @@
 
 import Tiles from "../../data/myTiles.js";
 
-export default class myCanvas {
+/** INITIALISATION, MISE EN PLACE DES TUILES ET CLEAN DES DIFFERENTS CANVAS **/
+
+export default class MyCanvas {
     constructor(element) {
         if (element == undefined) {
             this.element = document.createElement("canvas");

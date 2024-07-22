@@ -1,10 +1,12 @@
 "use strict";
 
-import myCanvas from "./myCanvas.js";
+import MyCanvas from "./myCanvas.js";
+
+/** GENERATION ET GESTION DES PERSO, DISPLAY ET GESTION DES MOUVEMENTS **/
 
 export default class MyCharacter {
     constructor(name, type, x, y, direction) {
-        this.canvas = new myCanvas();
+        this.canvas = new MyCanvas();
         this.canvas.setArea(game.map.size);
         this.name = name;
         this.type = type;
@@ -83,10 +85,10 @@ export default class MyCharacter {
             }
             this.tile.direction = this.getDirection(square.position);
             for(let frame=0;frame<24; frame++) {
-                // frame = frame / square.weight;
-                // if(frame >= 24) {
-                //     frame = 23;
-                // }
+                /**frame = frame / square.weight;
+                if(frame >= 24) {
+                    frame = 23;
+                }**/
                 this.canvas.clear();
                 this.tile.value = Math.floor(frame / 6);
                 this.tile.key = this.tile.direction + this.tile.value;

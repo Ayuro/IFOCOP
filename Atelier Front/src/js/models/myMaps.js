@@ -1,13 +1,15 @@
 "use strict";
 import MyGrid from "./algoFindWay/myGrid..js";
-import myCanvas from "./myCanvas.js";
+import MyCanvas from "./myCanvas.js";
 import MyClickManager from "./myInteractions.js";
-import mySquare from "./mySquare.js";
+import MySquare from "./mySquare.js";
+
+/** GENERATION, DISPLAY ET ATTENTE DU CLIC **/
 
 export default class Map {
     constructor () {
         this.listSquare = [];
-        this.canvas = new myCanvas();
+        this.canvas = new MyCanvas();
     };
 
     async loadMap(file) {
@@ -16,12 +18,12 @@ export default class Map {
         Object.assign(this, data);
         this.canvas.setArea(this.size);
         this.clickManager = new MyClickManager(this.size);
-        // for (let i=0;i<this.listSquare.length;i++) {
-        //     this.listSquare[i] = new mySquare(this.listSquare[i].x, this.listSquare[i].y, this.listSquare[i].tile);
-        // }
+        /**for (let i=0;i<this.listSquare.length;i++) {
+            this.listSquare[i] = new MySquare(this.listSquare[i].x, this.listSquare[i].y, this.listSquare[i].tile);
+        }**/
         for (let x=0;x<this.size.width;x++) {
             for (let y=0;y<this.size.height;y++) {
-                this.listSquare.push(new mySquare(x, y))
+                this.listSquare.push(new MySquare(x, y))
             }
         }
         this.grid = new MyGrid(this.listSquare, this.size);
