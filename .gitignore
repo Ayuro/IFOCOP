@@ -1,0 +1,11 @@
+# Dossier node_modules
+node_modules/
+
+# Dossier vscode
+.vscode
+
+# Config ESLint
+/eslint.config.js
+
+# Config jest
+/jest.config.js
