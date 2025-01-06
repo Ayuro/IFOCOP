@@ -1,0 +1,89 @@
+/***********Contenu***********/
+.group {
+  &__title {
+    display: inline-block;
+    position: relative;
+    max-width: 100%;
+    width: calc(100% - 4rem);
+    margin: .8rem 0 .25rem .8rem;
+    font-size: 1.5rem;
+    color: $color-virtuoworks;
+  }
+
+  &__content{
+    margin: 0 .5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+}
+
+.content {
+  &__title,
+  &__element {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+
+  &__element {
+    margin-top: .5rem;
+  }
+
+  &__title {
+    margin: 1rem 0 0;
+    &::before {
+      display: block;
+      content: '';
+      background: black;
+      margin-bottom: .5rem;
+      width: 100%;
+    }
+  }
+
+  &__description {
+    margin: 0;
+    font-style: italic;
+    font-weight: normal;
+    font-size: 0.9rem;
+  }
+
+  &__methode {
+    color: $green;
+  }
+
+  @media screen and (min-width: $media-low-desktop) {
+    justify-content: space-between;
+
+    &__element {
+      flex-basis: 48%;
+    }
+  }
+
+  @media screen and (min-width: $media-hight-desktop) {
+    &__element {
+      flex-basis: 31.8%;
+    }
+  }
+}
+
+.triangle {
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: .3rem;
+    right: -2rem;
+    cursor: pointer;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    transition: transform .5s ease-in-out;
+    border-width: 1rem .7rem 0 .7rem;
+    border-color: #f17b44 transparent transparent transparent;
+  }
+
+  &.hide::before {
+    transform: rotate( -180deg);
+  }
+}

@@ -1,0 +1,17 @@
+extends layouts/default-layout.pug
+
+block content
+
+  div.message
+
+    h1 Serveur d’API REST
+
+    p
+      strong Le point de départ de l’API est
+        |
+        |
+        a(href='/api' target='_blank') /api
+
+    p
+      small #{apiStatus.name} &middot; v#{apiStatus.version}
+

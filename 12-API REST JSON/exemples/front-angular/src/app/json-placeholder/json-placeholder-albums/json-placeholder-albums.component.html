@@ -1,0 +1,46 @@
+<h2>Albums</h2>
+
+<!--
+Cette approche de la pagination est simpliste et non ré-utilisable.
+Il est préférable de créer un composant dédié à la pagination.
+(voir la page de liste des restaurants pour un exemple)
+-->
+<ul class="pagination">
+  @for (page of pages; track page) {
+  <li>
+    <button
+      (click)="setPage(page)"
+      [ngClass]="{ current: page === currentPage }"
+    >
+      {{ page }}
+    </button>
+  </li>
+  }
+</ul>
+
+@if (albums$ | async ; as albums) {
+<ul>
+  @for (album of albums; track album.id) {
+  <li>
+    <a routerLink="{{ album.id }}">{{ album.title }}</a>
+  </li>
+  }
+</ul>
+} @else {
+
+<!--  -->
+
+@if(loading) {
+<div>
+  <app-loading [message]="'Chargement...'" />
+</div>
+}
+
+<!--  -->
+
+@if(error) {
+<div>{{ error }}</div>
+}
+
+<!--  -->
+}

@@ -1,0 +1,13 @@
+/* "#" vise des id, "." vise des classes */
+
+#premier {
+    color: blueviolet;
+}
+
+.autre {
+    color: magenta;
+}
+
+#dernier {
+    color: gold;
+}

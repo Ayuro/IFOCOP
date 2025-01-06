@@ -1,0 +1,18 @@
+<p>exercice-a5 works!</p>
+
+@if (heure > 00 && heure <12) {
+    <p>matin</p>
+} @else {
+    <p>après-midi</p>
+}
+
+<!-- @if (annee % 4 == 0 && annee % 100 != 0 || annee % 400 == 0) {
+    <p>Il y aura 366 jours cette année</p>
+} @else {
+    <p>Seulement 365</p>
+} -->
+
+<p ngIf="ftBissextile(annee) else nope">Il y aura 366 jours cette année</p>
+<ng-template>
+    <p>Seulement 365</p>
+</ng-template>

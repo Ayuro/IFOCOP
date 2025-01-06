@@ -1,0 +1,7 @@
+extends ../layouts/layout.pug
+block content
+  each post in posts
+    h3#postTitle= post.title
+    p#postBody=post.body
+    p#postAuthor=post.author
+    hr

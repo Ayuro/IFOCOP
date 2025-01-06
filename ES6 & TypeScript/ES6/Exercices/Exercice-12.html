@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>JavaScript : Exercice 12</title>
+		<script>
+			/*********************************
+			***********PRESENTATION***********
+			**********************************
+				ES6 introduit 2 nouvelles méthodes pour la création de tableaux, `Array.from()` et `Array.of()`.
+
+				`Array.from()` renvoie un nouveau tableau à partir d'un objet itérable (chaîne de caractère par exemple) ou semblable à un tableau.
+
+				On appelle itérable un objet dont les propriétés peuvent être parcourues
+				dans une boucle for
+
+				Un objet semblable à un tableau (array-like) est un objet qui possède une propriété `.length`.
+				Par exemple :
+
+				ES6---------------------------------------------------------
+				const tableau = Array.from({ length: 3 });
+				console.log(tableau); // [undefined, undefined, undefined]
+				------------------------------------------------------------
+
+				Documentation :
+				- https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array/from
+				- https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array/of
+			*/
+
+			/*********************************
+			*************EXERCICE*************
+			**********************************
+				Créez 10 balises div qui contiennent chacune un nombre de 1 à 10.
+				Récupérez une référence à la collection contenant toutes les div du document. Vous pouvez utiliser window.document.getElementsByTagName()
+				En utilisant Array.from() et son deuxième argument optionnel (voir documentation), obtenez un Array contenant chaque nombre contenu dans chaque div. */
+
+		</script>
+	</head>
+	<body>
+		<h1>Mon nouveau document</h1>
+		<p>Premier paragraphe</p>
+		<p>Deuxième paragraphe</p>
+		<noscript>
+			<p>Veuillez activer JavaScript</p>
+		</noscript>
+	</body>
+</html>

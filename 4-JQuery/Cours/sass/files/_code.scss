@@ -1,0 +1,17 @@
+pre[class*="language-"]{
+  margin-right: 2%;
+  font-size: 0.8em;
+  padding: 0.5em;
+
+  @media screen and (min-width: $media-phone) {
+    margin-right: 1%;
+    font-size: 0.9em;
+  }
+}
+
+code,
+pre {
+  &[class*="language-"] {
+    white-space: pre-wrap;
+  }
+}

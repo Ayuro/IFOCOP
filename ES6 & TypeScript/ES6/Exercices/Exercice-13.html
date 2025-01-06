@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>JavaScript : Exercice 13</title>
+		<script>
+			/*********************************
+			***********PRESENTATION***********
+			**********************************
+				ES6 introduit 2 nouvelles méthodes d'instance pour la recherche de valeurs dans un tableau, `Array.prototype.find()` et `Array.prototype.findIndex()`.
+
+				`Array.prototype.find()` renvoie la valeur du PREMIER ÉLÉMENT trouvé dans le tableau qui respecte la condition donnée par la fonction de test passée en argument.
+
+				`Array.prototype.find(fonctionDeTest(element[, index[, tableau]])[, thisArg])` prend en argument :
+				- une fonction de test qui reçoit l'élément courant du tableau et optionnellement l'index courant ainsi qu'une référence au tableau parcouru
+				- en option la valeur que prendra le mot-clé `this` à l'intérieur de la fonction de test
+
+				Exemples :
+
+				ES6-----------------------------------------------
+				const nombres = [1, 2, 10, 99, -10, 5, Infinity];
+
+				nombres.find(function(element) {
+					return element > 10;
+				}); // renvoie 99
+
+				nombres.find(function(element, index) {
+					return element > 10 && index >= 4;
+				}) // renvoie Infinity
+				--------------------------------------------------
+
+				Documentation :
+				- https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array/find
+				- https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array/findIndex
+			*/
+
+			/*********************************
+			*************EXERCICE*************
+			**********************************
+			Créez 10 div qui contiennent chacune un nombre de 1 à 10.
+			Récupérez une référence à la collection contenant toutes les div du document. Vous pouvez utiliser window.document.getElementsByTagName()
+			Utilisez Array.from pour créér un objet de type Array à l'aide de la l'objet type HTMLCollection obtenu et utilisez la méthode .find() pour récupérer la div dont le contenu est 5.
+			*/
+
+		</script>
+	</head>
+	<body>
+		<h1>Mon nouveau document</h1>
+		<p>Premier paragraphe</p>
+		<p>Deuxième paragraphe</p>
+		<noscript>
+			<p>Veuillez activer JavaScript</p>
+		</noscript>
+	</body>
+</html>

@@ -1,0 +1,12 @@
+:host {
+  display: block;
+}
+
+h1 {
+  opacity: 0;
+  transition: opacity 30s;
+
+  @starting-style {
+    opacity: 1;
+  }
+}

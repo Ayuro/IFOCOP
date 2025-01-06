@@ -1,8 +1,7 @@
 extends ../layouts/layout.pug
+block append css 
 block append pageContent
 
-    a(href="/") Vers l'accueil
-    a(href="autretrucpug") Vers un autre truc
-    a(href="image") Vers les images
+    h1 #{pageTitle}
 
-    script(src='scripts/index.js')
+    script(src='/js/index.js')

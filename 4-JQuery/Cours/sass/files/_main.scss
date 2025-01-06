@@ -1,0 +1,69 @@
+/***********Général***********/
+html{
+  font-family: Arial, Helvetica, Sans-serif;
+  font-size: .9rem;
+
+  @media screen and (min-width: $media-tablet) {
+    font-size: 1.15rem;
+  }
+}
+
+body{
+  margin: 0;
+  background-color: $color-virtuoworks;
+}
+
+.page {
+  background-color: white;
+
+  &,
+  &__fill {
+    margin: 0 2.5rem 0 2%;
+  }
+
+  &__fill{
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+     height: 100px;
+    min-height: 100%;background-color: white; color: white;
+  }
+
+  &__filter{
+    display: none; background-color: grey;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 5;
+    min-height: 100%;
+    opacity: 0;
+  }
+  
+  @media screen and (min-width: $media-phone){
+    &,
+    &__fill {
+      margin: 0 3rem 0 1.5%;
+    }
+  }
+
+  @media screen and (min-width: $media-tablet) {
+    &,
+    &__fill {
+      margin: 0 3rem 0 1%;
+    }
+  }
+
+  @media screen and (min-width: $media-low-desktop){
+    text-align: left;
+
+    &,
+    &__fill {
+      margin: 0 .8rem 0 13rem;
+    }
+  }
+}

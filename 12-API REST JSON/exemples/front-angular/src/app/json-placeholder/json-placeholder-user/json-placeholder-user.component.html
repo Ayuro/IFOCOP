@@ -1,0 +1,47 @@
+@if( user$ | async; as user ) {
+
+<div class="user">
+  <nav>
+    <ul>
+      <li>
+        <a
+          routerLink="."
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >Profile</a
+        >
+      </li>
+      <li><a routerLink="posts" routerLinkActive="active">Posts</a></li>
+      <li><a routerLink="albums" routerLinkActive="active">Albums</a></li>
+    </ul>
+  </nav>
+
+  <div class="user-page">
+    <h2>{{ user.name }}</h2>
+
+    <div class="user-content">
+      <router-outlet />
+    </div>
+  </div>
+</div>
+
+<!--  -->
+
+} @else {
+
+<!--  -->
+
+@if(loading) {
+<div>
+  <app-loading [message]="'Chargement...'" />
+</div>
+}
+
+<!--  -->
+
+@if(error) {
+<div>{{ error }}</div>
+}
+
+<!--  -->
+}

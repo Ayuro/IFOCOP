@@ -1,0 +1,28 @@
+<h2>Quartiers</h2>
+
+@let boroughs = boroughs$ | async; @if (boroughs$ | async; as boroughs) {
+<ul>
+  @for(borough of boroughs.data; track borough) {
+  <li>
+    {{ borough }}
+  </li>
+  }
+</ul>
+} @else {
+
+<!--  -->
+
+@if (boroughs?.loading) {
+
+<app-loading messages="Chargement des quartiers..." />
+}
+
+<!--  -->
+
+@if (boroughs?.error; as error) {
+<app-error-message [message]="error"></app-error-message>
+}
+
+<!--  -->
+
+}

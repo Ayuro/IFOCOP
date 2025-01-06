@@ -1,0 +1,29 @@
+[{
+  "_id": {
+    "$oid": "61eabba072e7db204dc65537"
+  },
+  "identifiant": "tom",
+  "password": "jedusor",
+  "couleur": "bleu"
+},{
+  "_id": {
+    "$oid": "61eabbf672e7db204dc65538"
+  },
+  "identifiant": "ifocop",
+  "password": "fabienne",
+  "couleur": "rouge"
+},{
+  "_id": {
+    "$oid": "61eabc2772e7db204dc65539"
+  },
+  "identifiant": "admin",
+  "password": "123456",
+  "couleur": "vert"
+},{
+  "_id": {
+    "$oid": "61eabc5472e7db204dc6553a"
+  },
+  "identifiant": "larry",
+  "password": "1motDePasseSécuriséCar@ssezLongPourêtretranquille",
+  "couleur": "jaune"
+}]

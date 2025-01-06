@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "jsdoc": "^4.0.3",
+    "prettier": "^3.3.3"
+  }
+}

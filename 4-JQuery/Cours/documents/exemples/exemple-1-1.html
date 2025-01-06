@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemple 1 - 1</title>
+    <script src="../jquery.js"></script>
+    <script>
+        window.onload = function() {
+            console.log(jQuery('p'));
+            console.log($('.emplacement'));
+
+            $('.fin').html('Changement de <strong>texte</strong> dans le paragraphe.');
+
+            $('h2:first-child').css('margin-left','50px');
+
+            $('p + h2').css('color','orange').html('Un nouveau texte pour le titre');
+        };
+    </script>
+</head>
+<body>
+    <h1>Exemple 1 - 1</h1>
+    <div class="conteneur">
+        <h2>Un sous-titre</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia sequi sit fugiat? At eius dicta veritatis, alias officiis fuga, sapiente consequuntur numquam voluptate cumque animi vitae molestias culpa reiciendis facere.</p>
+        <p class="emplacement">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore illum accusamus soluta culpa quo eveniet, ex possimus nemo consequuntur molestiae incidunt, inventore veniam vel, laudantium veritatis harum eaque praesentium rerum?</p>
+        <h2>Autre sous-titre</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid aperiam possimus facilis beatae. Cupiditate asperiores repudiandae voluptatum sunt fugiat, repellendus tempore sequi quod amet reiciendis ullam doloremque accusantium? Cumque, recusandae!</p>
+        <p class="fin">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat repellendus minima reiciendis perferendis sed, voluptas laboriosam sint harum iste ratione vel cumque aliquid dolor pariatur repellat consequuntur provident aspernatur? Debitis.</p>
+    </div>
+</body>
+</html>

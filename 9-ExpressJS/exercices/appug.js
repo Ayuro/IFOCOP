@@ -20,21 +20,21 @@ app.get('/', (req, res, next) => {
     console.log("I'm alive!");
     return res.render('home', {
         pageTitle: 'Accueil',
-        mySite: 'My WebSite',
+        location: req.url
     })
 })
 
 app.get('/image', (req, res, next) => {
     return res.render('image', {
         pageTitle: 'Images',
-        mySite: 'My WebSite'
+        location: req.url
     })
 });
 
 app.get('/autretrucpug', (req, res, next) => {
     return res.render('autretrucpug', {
         pageTitle: 'Un autre truc',
-        mySite: 'My WebSite'
+        location: req.url
     })
 });
 

@@ -1,0 +1,24 @@
+:root {
+  // Couleurs de thème
+  --clr-primary-shade: #156642;
+  --clr-primary: #00a159;
+  --clr-primary-light-bg: hsl(153, 75%, 95%);
+  --clr-primary-hover: hsl(153, 100%, 36%);
+  --clr-accent: #ecd052;
+
+  // Couleurs des liens
+  --clr-link: #0077cc;
+
+  // Couleurs d'état
+  --clr-danger: #dd0330;
+  --clr-warning: #eec930;
+  --clr-success: hsl(90deg 69% 41%);
+
+  // Ombres
+  --box-shadow: 3px 3px 10px rgba(128 128 128 / 30%);
+  --box-shadow-wide: 3px 3px 25px 8px rgba(96 96 96 / 30%);
+
+  // Formulaires
+  --focus-outline: 1px solid SelectedItem; // https://developer.mozilla.org/en-US/docs/Web/CSS/
+  --focus-shadow: 0 0 5px 3px SelectedItem;
+}

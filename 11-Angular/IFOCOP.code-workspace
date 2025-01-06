@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../../Exam"
+		}
+	],
+	"settings": {
+		"workbench.colorCustomizations": {
+			"activityBar.background": "#3F272D",
+			"titleBar.activeBackground": "#58363F",
+			"titleBar.activeForeground": "#FCFAFA"
+		}
+	}
+}

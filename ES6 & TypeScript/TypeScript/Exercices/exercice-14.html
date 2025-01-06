@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>TypeScript : Exercice 14</title>
+			<!---------------------------------
+			-----------PRÉSENTATION-----------
+			----------------------------------
+				Comme en JavaScript depuis ES2015, TypeScript permet l'utilisation de Class.
+
+				Le principe de base est le suivant :
+			
+				===ts_code==================================
+					class Salutation {
+						information: string;
+						constructor (message: string) {
+							this.information = message;
+						}
+						parler() {
+							alert('Voici le message' + this.information);
+						}
+					}
+
+					let unMessage = new Salutation('Bonjour à tous');
+				============================================
+				
+			----------------------------------
+			-------------EXERCICE-------------
+			----------------------------------
+			
+			-------
+			-- 1 --
+			-------
+				- Nous allons créer un rectangle au moyen d'une classe. Nous définirons sa largeur, sa hauteur et ses coordonnés ;
+				- Créez cette classe. Pensez bien à donner un type à chaque propriété et chaque argument du constructeur ;
+				- Utilisez la class pour créer un rectangle ;
+				- Affichez le rectangle dans la console.
+
+			-------
+			-- 2 --
+			-------
+				- Par défaut, le constructeur fixe une largeur de 100 et une hauteur égale à la largeur.
+
+			-------
+			-- 3 --
+			-------
+				- Ajoutez une méthode à la classe ;
+				- Cette méthode permet de modifiez la position du rectangle ;
+				- Si un ou les deux coordonnés ne sont pas fournis, conservez les valeurs actuelles ;
+				- À la suite de la création du rectangle, modifiez sa position et affichez les informations de ce rectangle dans la console. 
+
+			-->
+	</head>
+	<body>
+		<h1>TypeScript : Exercice 14</h1>
+        <p>Un paragraphe</p>
+		<noscript>
+			<p>Veuillez activer JavaScript</p>
+		</noscript>
+	</body>
+</html>

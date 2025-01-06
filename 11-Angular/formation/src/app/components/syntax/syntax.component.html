@@ -1,0 +1,74 @@
+<h2>Syntaxe de template</h2>
+
+<div [style.border]="border">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, facere optio. Illo ipsa quaerat neque mollitia voluptate? Repellat unde alias pariatur! Accusantium, eos ex. Fugiat eius veniam voluptatum deserunt accusantium!</div>
+
+<div [style.display]="display">Affiché ou caché ?</div>
+
+<button disabled="false">TEST</button>
+<!-- https://developer.mozilla.org/en-US/docs/Glossary/Boolean/HTML -->
+
+<button [disabled]="disabled">TEST</button>
+<button [disabled]="false">TEST</button>
+<button disabled="false" toto="titi">TEST</button>
+<button>TEST</button>
+<button disabled>TEST</button>
+
+<p [attr.aria-label]="ariaLabel">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis nostrum tempora laborum accusamus reiciendis quidem qui ex nisi corrupti eius deleniti nihil porro nulla voluptatem est debitis, delectus soluta nemo.</p>
+
+<p>Éléments : {{ elements }}</p>
+<p>Éléments 1 : {{ elements[0] }}</p>
+<p>Éléments 2 : {{ elements[1] }}</p>
+<p>Éléments 3 : {{ elements[2] }}</p>
+
+<ul>
+@for(element of elements; track $index) {
+  <li>{{ element }}</li>
+}
+</ul>
+
+@if (condition) {
+  <p>Je suis affiché !</p>
+}
+@else {
+  <p>Autre paragraphe</p>
+  <p>La condition est fausse</p>
+}
+
+<p>Bonjour, mon nom est {{ firsName + ' ' + lastName }}.</p>
+
+<p>{{ 2 + 2 }}</p>
+
+<p>{{ '2' + 2 }}</p>
+
+<!-- <p>Nous somme le {{ new Date() }}</p>  -->
+
+<!-- Impossible -->
+
+<p>Nous sommes le {{ today }}</p>
+
+<p>Somme de 2 + 3 = {{ sum }}</p>
+
+<p>Produit de 2 * 3 = {{ product }}</p>
+
+<p>Produit de 3 * 6 = {{ multiply(3, 6) }}</p>
+
+<p>{{ true && false }}</p>
+
+<p>{{ true
+|| false }}</p>
+
+<p>undefined : {{ undefined }}</p>
+
+
+
+@if (true) {
+  <p>Paragraphe toujours affiché</p>
+}
+
+@if (3 > 2) {
+<p>Trois est supérieur à deux</p>
+}
+
+@if (3 < 2) {
+  <p>Trois est inférieur à deux</p>
+}

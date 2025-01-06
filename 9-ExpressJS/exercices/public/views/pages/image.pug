@@ -1,6 +1,6 @@
 extends ../layouts/layout.pug
-block append pageContent
+block append css 
+block pageContent 
+    h1 #{pageTitle}
 
-    a(href="/") Vers l'accueil
-    a(href="autretrucpug") Vers un autre truc
-    a(href="image") Vers les images
+    img(src="../images/avions/rafale.jpg", alt="Meilleur avions du monde")

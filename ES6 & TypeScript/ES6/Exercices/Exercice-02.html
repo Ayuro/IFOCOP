@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8"/>
+		<title>JavaScript : Exercice 2</title>
+		<script>
+			/*********************************
+			***********PRESENTATION***********
+			**********************************
+				Avec ES6 apparaît l'expression de fonction fléchée qui permet d'utiliser une syntaxe plus courte. Celle-ci est particulièrement adaptée pour les fonctions anonymes.
+
+				Ainsi la fonction :
+
+				-------------------------------------------------------------------
+				var test = function(information) {
+					return 'Voici le texte : ' + information;
+				}
+				alert(test('coucou'));
+				-------------------------------------------------------------------
+				
+				Peut s'écrire : 
+
+				ES6----------------------------------------------------------------
+				var test = (information) => {
+					return 'Voici le texte : ' + information;
+				}
+				alert(test('coucou'));
+				-------------------------------------------------------------------
+				
+				Si la fonction ne possède qu'une seule ligne d'instruction, il est possible de la réduire de la façon suivante :
+
+				ES6----------------------------------------------------------------
+				var testReduit = information => 'Voici le texte : ' + information;
+				-------------------------------------------------------------------
+				
+				Vous remarquerez, dans ce dernier cas, qu'il n'est pas nécessaire de mentionner le return.
+				
+				Bien sûr, la fonction peut ne pas comporter d'argument ce qui nous donne :
+				
+				ES6----------------------------------------------------------------
+				var addition = () => {
+					alert(15 + 7);
+				}
+				-------------------------------------------------------------------
+			*/
+
+			/*********************************
+			*************EXERCICE*************
+			**********************************
+			** 1 **
+				Créez une fonction qui génère un nombre aléatoire entre 0 et 10 et qui le transforme en nombre entier (cf. méthodes de l'objet Math) .
+				Ajoutez un texte à ce nombre pour obtenir la phrase : «Le nombre est XX » où XX est le nombre obtenu.
+				Cette fonction retourne la phrase .
+				Affichez cette valeur de retour dans une boite de dialogue.
+				Utilisez une expression de fonction fléchée.
+			*/	
+
+			const ftRandom = () => {return 'Le nombre est ' + (parseInt(Math.random() * 10))};
+			alert(ftRandom());
+
+			/*
+			** 2 **
+				Rassemblez l'ensemble du code contenu dans la fonction de telle façon à ne pas avoir besoin d'utiliser le mot clef return.
+			*/
+
+			// CF petit 1
+			
+		</script>
+	</head>
+	<body>
+		<h1>Mon nouveau document</h1>
+		<p>Premier paragraphe</p>
+		<p>Deuxième paragraphe</p>
+		<noscript>
+			<p>Veuillez activer JavaScript</p>
+		</noscript>
+	</body>
+</html>

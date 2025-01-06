@@ -1,0 +1,16 @@
+<nav>
+  <ul>
+    @for (link of links; track link) {
+    <li>
+      <a
+        [routerLink]="link.url"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: link?.exact ?? false }"
+        >{{ link.text }}</a
+      >
+    </li>
+    }
+  </ul>
+</nav>
+
+<hr />

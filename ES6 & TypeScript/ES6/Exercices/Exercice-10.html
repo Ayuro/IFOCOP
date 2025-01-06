@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>JavaScript : Exercice 10</title>
+		<script>
+			/*********************************
+			***********PRESENTATION***********
+			**********************************
+				ES6 propose de créer des objets Map. Il s'agit de dictionnaires possédant des paires clef / valeur. 
+
+				Cela nous donne :
+
+				ES6------------------------------------------
+				var groupe = new Map();
+				groupe.set('Message','coucou');
+				groupe.set('valeur',15);
+				groupe.set(18,true);
+				console.log(groupe); //{ Message → "coucou", valeur → 15, 18 → true }
+				console.log(groupe.get('Message')); //'coucou'
+				---------------------------------------------
+			*/
+
+			/*********************************
+			*************EXERCICE*************
+			**********************************
+				Lorsque l'utilisateur rempli les champs du formulaire et clique sur le bouton :
+				- Vous récupérez pour chaque champ le nom et la valeur de celui-ci;
+				- Vous stockez toutes ces informations dans une Map;
+				- Vous créez une nouvelle ligne au tableau pour insérer dans chaque colonne la bonne information;
+				- Il doit être possible d'insérer autant de lignes que souhaitées.
+
+				Utilisez, entre autres, onclick, event.preventDefault(), forEach(), new Map, MAP.set(), MAP.get().
+
+				Pour vous éviter de créer à chaque reprise une Map, utilisez la méthode clear() sur une Map permet de la vider.
+				
+			*/
+
+		</script>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<h1>Mon nouveau document</h1>
+		<p>Premier paragraphe</p>
+		<p>Deuxième paragraphe</p>
+		<form action="#">
+			<label>
+			  Prénom
+			  <input type="text" name="prenom">
+			</label>
+			<label>
+			  Nom
+			  <input type="text" name="nom">
+			</label>
+			<label>
+			  age
+			  <input type="text" name="age">
+			</label>
+			<button>Ajout</button>
+		</form>
+		<table>
+		<tr>
+			<th>Prénom</th>
+			<th>Nom</th>
+			<th>Age</th>
+		</tr>
+		</table>
+		<noscript>
+			<p>Veuillez activer JavaScript</p>
+		</noscript>
+	</body>
+</html>

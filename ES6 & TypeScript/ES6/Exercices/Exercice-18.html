@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>JavaScript : Exercice 18</title>
+		<script>
+			/*********************************
+			***********PRESENTATION***********
+			**********************************
+  				Un des avantages de l'introduction de la syntaxe `class` en ES6 tient dans la facilité à créer des classes dérivées. On utilise pour cela le mot-clé `extends`.
+
+				Exemple :
+				
+				ES6---------------------------------------------------------
+				// Classe de base
+				class Ville {
+					constructor(nom,departement,lieu,climat) {
+					this.nom = nom;
+					this.departement = departement;
+					this.lieu = lieu;
+					this.climat = climat;
+					}
+		​
+					situation() {
+					console.log(`La ville de ${this.nom} est située dans le département ${this.departement}.`);
+					}
+		​
+					geographie() {
+					console.log(`Nous sommes en ${this.lieu} et le climat est de type ${this.climat}.`);
+					}
+				}
+		​
+				// Classe dérivée de la classe de base
+				class VilleMontagne extends Ville {
+					constructor (nom,departement) {
+					super (nom, departement,'Montagne','Montagnard')
+					}
+				}
+		​
+				// Autre classe dérivée
+				class VillePlaine extends Ville {
+					constructor (nom,departement) {
+					super (nom, departement,'Plaine','tempéré')
+					}
+				}
+		​
+				var chamonix = new VilleMontagne('Chamonix','Hautes-Savoie');
+				console.log(chamonix);
+				chamonix.situation();
+				chamonix.geographie();
+		​
+				var dijon = new VilleMontagne('Dijon','Côtes d\'Or');
+				console.log(dijon);
+				dijon.situation();
+          		------------------------------------------------------------
+     		*/
+
+			/*********************************
+			*************EXERCICE*************
+			**********************************
+			** 1 **
+				Reprenez la classe Rectangle précédente et créez une nouvelle classe que vous appellerez RectangleColoré et qui dérivera de la classe Rectangle. Les instances de la classe RectangleColoré auront une propriété 'couleur' qui n'était pas présente sur la classe d'origine.
+			*/	
+
+			/*
+			** 2 **
+				Créez désormais une classe Carré qui héritera également de la classe Rectangle. Un carré est un rectangle dont la largeur et la hauteur sont égaux. Faites transparaître cette propriété dans la liste des arguments attendus par le constructeur de la classe Carré.
+			*/	
+
+			/*	
+			** 3 **
+				Ajoutez également une méthode statique `dériverDe` à la classe RectangleColoré, qui prendra en argument un rectangle classique ainsi qu'une chaîne de caractère représentant une couleur. Cette méthode renverra un nouveau rectangle coloré en recopiant les caractéristiques d'un rectangle simple.
+			*/
+
+		</script>
+	</head>
+	<body>
+		<h1>Mon nouveau document</h1>
+		<p>Premier paragraphe</p>
+		<p>Deuxième paragraphe</p>
+		<noscript>
+			<p>Veuillez activer JavaScript</p>
+		</noscript>
+	</body>
+</html>

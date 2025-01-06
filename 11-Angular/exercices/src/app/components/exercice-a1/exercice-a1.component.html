@@ -1,0 +1,22 @@
+<h1>Exercice A1</h1>
+
+<p>Si je fais des propriété numérique "x" et "y" dans la classe, alors les strings vont empêcher la compolisation, où donnerons des incohérences de résultat non?</p>
+
+@for (titre of titres; track titre.index) {
+    <h2>{{ titre.question }}</h2>
+    @if (titre.index == 1) {
+        <p>{{ titre.x + titre.y }}</p>
+    }
+    @if (titre.index == 2) {
+        <p>{{ titre.x + titre.y }}</p>
+    }
+    @if (titre.index == 3) {
+        <p>{{ titre.x % titre.y }}</p>
+    }
+    @if (titre.index == 4) {
+        <p>{{ titre.x > titre.y }}</p>
+    }
+    @if (titre.index == 5) {
+        <p>{{ ((3 * titre.x + 2) - (43 * titre.x * (9 * titre.y + 6))) / (2 * titre.y) }}</p>
+    }
+}

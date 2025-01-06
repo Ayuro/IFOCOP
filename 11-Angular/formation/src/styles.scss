@@ -1,0 +1,41 @@
+/* You can add global styles to this file, and also import other style files */
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+}
+
+body {
+  margin: 0;
+}
+
+label {
+  font-weight: bold;
+}
+
+input:not([type="checkbox"]),
+input:not([type="radio"]) {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #000;
+}
+
+.form-control {
+  margin: 1rem 0;
+}
+
+button {
+  border: none;
+  background-color: #09f;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+
+.ng-valid:not(form) {
+  border: 5px solid green;
+}
+.ng-invalid.ng-touched:not(form) {
+  border: 5px solid red;
+}

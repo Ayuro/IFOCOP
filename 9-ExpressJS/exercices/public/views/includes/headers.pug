@@ -1,0 +1,13 @@
+block append css 
+  link(rel="stylesheet", href="/css/navbar.css")
+nav
+  ul
+    if "/" !== location 
+      li
+        a(href="/") Accueil
+    if "/image" !== location
+      li
+        a(href="/image") Images
+    if "/autretrucpug" !== location
+      li
+        a(href="/autretrucpug") Autres trucs

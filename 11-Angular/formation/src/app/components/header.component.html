@@ -1,0 +1,61 @@
+<img
+  src="images/kitten-sitzt-boden-768x512-1.jpeg"
+  alt="Un petit chat"
+  height="64"
+/>
+<header>
+  <div class="title">{{ title }}</div>
+  <div>{{ tagline }}</div>
+  <!-- <app-clock></app-clock>
+  <p>{{ numbersServiceDansHeader.rand }}</p>
+  <p>{{ numbersServiceDansHeader.add(3, 7) }}</p> -->
+
+  <p>
+    count local (number) : {{ count }} | count local (signal ):
+    {{ countSignal() }} | count service :
+    {{ numbersServiceDansHeader.count }}
+    <button (click)="numbersServiceDansHeader.inc()">+</button>
+  </p>
+  <p>squaredCount : {{ numbersServiceDansHeader.squaredCount() }}</p>
+
+  @if(authService.isAuthenticated) {
+  <p>Bonjour, vous êtes authentifié</p>
+  }@else {
+  <p>Veuillez vous connecter</p>
+  }
+
+  <nav>
+    <ul>
+      <li>
+        <a
+          routerLink="/"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >Accueil</a
+        >
+      </li>
+      <li>
+        <a routerLink="/tableau-periodique" routerLinkActive="active"
+          >Tableau périodique</a
+        >
+      </li>
+      <li>
+        <a routerLink="/directives" routerLinkActive="active">Directives</a>
+      </li>
+      <li>
+        <a routerLink="/formulaire/demo" routerLinkActive="active"
+          >Formulaire</a
+        >
+      </li>
+      <li>
+        <a routerLink="/login" routerLinkActive="active">Connexion</a>
+      </li>
+      <li>
+        <a routerLink="/toto" routerLinkActive="active">Page inexistante</a>
+      </li>
+      <li>
+        <a routerLink="/todo" routerLinkActive="active">To-Do List</a>
+      </li>
+    </ul>
+  </nav>
+</header>

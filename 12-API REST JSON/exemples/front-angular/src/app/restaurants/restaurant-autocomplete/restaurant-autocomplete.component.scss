@@ -1,0 +1,49 @@
+.wrapper {
+  position: relative;
+}
+
+.search {
+  position: relative;
+
+  input {
+    width: 100%;
+  }
+
+  span {
+    position: absolute;
+    top: 24px;
+    right: 16px;
+  }
+}
+
+ul {
+  position: absolute;
+  width: 100%;
+  z-index: 3;
+  background-color: #fff;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  box-shadow: var(--box-shadow);
+  max-height: 200px;
+  overflow: auto;
+}
+
+li {
+  padding: 0;
+}
+
+a:link,
+a:visited {
+  display: block;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  background-color: var(--clr-primary);
+  background-color: var(--clr-link);
+  color: #fff;
+  cursor: pointer;
+}

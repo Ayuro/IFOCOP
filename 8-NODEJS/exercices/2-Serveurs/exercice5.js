@@ -65,7 +65,7 @@ myServer.on('request', function(requestHTTP, responseHTTP) {
           responseHTTP.end();
         });
       } else 
-        defineHTTP(404, './404.html');
+        defineHTTP(404, process.cwd() + '/404.html');
     });
   }
   defineHTTP(200,slug);

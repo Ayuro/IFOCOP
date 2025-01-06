@@ -1,0 +1,21 @@
+{
+  "name": "cours-securite-diwjs",
+  "version": "1.0.0",
+  "description": "Cours sur la sécurisation des applications web",
+  "main": "exercices/app.js",
+  "scripts": {
+    "start": "cd exercices && node app.js"
+  },
+  "author": "Bertrand Ravier",
+  "license": "MIT",
+  "dependencies": {
+    "ansi-regex": "^4.1.0",
+    "express": "^4.17.2",
+    "latest": "^0.2.0",
+    "mongodb": "^4.17.2"
+  },
+  "devDependencies": {
+    "@koober/plop-plugin": "^1.0.4",
+    "nodemon": "^2.0.15"
+  }
+}

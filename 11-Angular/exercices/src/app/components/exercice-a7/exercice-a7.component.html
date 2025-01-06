@@ -1,0 +1,5 @@
+<p>exercice-a7 works!</p>
+
+@for (voiture of voitures; track voiture.model) {
+    <p>Modèle : {{ ftToUpperFirst(voiture.model) }}.<br> Puissance : {{ ftToUpperAll(voiture.power) }}.<br> Prix : {{ voiture.price | currency :'EUR'}}. <br> Date de sortie : {{ ftToDate(voiture.date)}}</p>
+}

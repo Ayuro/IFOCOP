@@ -1,0 +1,44 @@
+.info {
+  position:absolute;
+  left: -23rem;
+  z-index: 20;
+  transition: left 1s ease-in-out;
+  width: 20rem;
+  padding: 1rem;
+  border: .5rem solid coral;
+  border-radius: .5rem;
+  background:white;
+}
+
+.info--visible {
+  left: calc(50% - 11.5rem);
+}
+
+.voile {
+  position: fixed;
+  display: none;
+  top: 0;
+  bottom: 0;
+  left:0;
+  right:0;
+  background: rgba(50,50,50,0.8);
+  z-index: 5;
+}
+
+.voile--visible {
+  display:block;
+}
+
+.action {
+  display:flex;
+  justify-content: center;
+}
+
+.action--clique {
+  margin-right: 1rem;
+}
+
+.action--clique,
+.action--survol {
+  cursor:pointer;
+}

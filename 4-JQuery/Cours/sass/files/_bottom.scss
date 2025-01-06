@@ -1,0 +1,19 @@
+.info {
+  border-bottom: 2px solid $color-virtuoworks;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  &__link {
+    color: $color-virtuoworks;
+    margin-top: 0.8rem;
+    text-align: center;
+  }
+
+  &__logo {
+    width: 78%;
+    padding: 0 2%;
+    background: $color-virtuoworks;
+    margin-bottom: 0.5rem;
+  }
+}

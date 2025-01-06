@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemple 1-1</title>
+    <script src="../jquery.js"></script>
+    <script>
+        window.onload = function() {
+            console.dir(jQuery('p'));
+            console.dir($('.emplacement'));
+
+            $('.fin').html('Changement de <strong>texte</strong> dans le paragraphe.');
+            $('h2:first-child').css('margin-left','50px');
+            $('p + h2').css('color','orange').html('Un nouveau texte pour le titre').click(function() {
+                console.dir('WHEEEEEEEEEEEE!!!');
+            });
+        };
+    </script>
+</head>
+<body>
+    <h1>Exemple 1-1</h1>
+    <div class="container">
+        <h2>Un sous titre</h2>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque, incidunt modi omnis, odio ab sunt atque, fugiat rem maiores quos optio? Ea labore, officia commodi quasi ad natus. Neque aperiam odio laborum facere velit exercitationem tempore dolorum. Qui, dolorum vel maxime harum inventore, enim ad, rem fugit velit adipisci quos!</p>
+        <p class="emplacement">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis cumque corporis, ab impedit quidem quaerat molestiae quasi praesentium sapiente veniam iusto vitae dignissimos ea totam ipsum doloribus eos asperiores itaque accusantium corrupti? Incidunt obcaecati reiciendis placeat enim repellat provident, exercitationem quo nostrum quis repudiandae deleniti inventore a voluptas nobis porro.</p>
+        <h2>Un autre sous-titre</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, saepe officia ea illo voluptatibus, alias error ipsum aut, molestiae exercitationem recusandae fugit facilis eum porro?</p>
+        <p class="fin">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam temporibus maxime maiores adipisci odio nesciunt, voluptas pariatur omnis tenetur perferendis molestias quam quidem minima neque!</p>
+    </div>
+</body>
+</html>

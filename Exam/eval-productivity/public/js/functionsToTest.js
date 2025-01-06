@@ -48,4 +48,14 @@ const multiplyAllByTwo = (arrayOfNumbers) => {
   return response;
 };
 
-export default multiplyAllByTwo;
+const isItStr = (str) => {
+  let response;
+  if (typeof(str) == "string")
+    response = "OK";
+  else
+    response = "KO";
+  return response;
+}
+
+// export default isItStr;
+module.exports.isItStr = isItStr;

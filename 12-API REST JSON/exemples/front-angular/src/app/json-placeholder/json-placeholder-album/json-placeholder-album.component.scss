@@ -1,0 +1,31 @@
+.photo-grid {
+  margin-top: 2rem;
+  gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 150px);
+
+  div div {
+    background-color: #fff;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--box-shadow);
+  }
+}
+
+.photo-title {
+  width: 150px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+h2 {
+  margin-bottom: 0;
+}
+
+p.author {
+  margin-top: 0;
+}

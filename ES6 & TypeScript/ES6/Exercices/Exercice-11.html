@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>JavaScript : Exercice 11</title>
+		<script>
+			/*********************************
+			***********PRESENTATION***********
+			**********************************
+				NOUVEAU !
+				ES6 introduit la boucle `for...of` qui permet d'itérer sur les éléments de n'importe quel objet itérable.
+				
+				Notamment :
+				- les tableaux
+				- les chaînes de caractères
+				- l'objet arguments (disponible à l'intérieur d'une fonction)
+				- l'objet contenu dans la propriété element.classList
+				- les collections d'éléments HTMLCollection
+				- les NodeList
+				- les instances de Set, Map, WeakSet, WeakMap
+			*/
+
+			/*********************************
+			*************EXERCICE*************
+			**********************************
+				Créez 10 balises div ayant la classe (attribut HTML) "row". Chaque div avec la classe "row" contient 8 balises span avec la classe (attribut HTML) "column". Certaines balises span contiennent des "X" et d'autres des "-" disposés aléatoirement.
+
+        		Écrivez un algorithme qui :
+				- Récupère toutes les balises div avec la classe (attribut HTML) "row" ;
+				- Pour chaque balise div avec la classe (attribut HTML) "row", récupère tous les balises span avec la classe (attribut HTML) "column" ;
+				- Affiche dans la console la position de chaque X sous la forme de coordonnées comme par exemple c(3,4) où 3 est l'abscisse et 4 l'ordonnée.
+
+          		N.B. : Vous utiliserez for... of pour itérer. Vous incrémenterez des variables pour calculer les coordonnées de X. Pour récupérer les collections d'éléments du DOM vous utiliserez la méthode window.document.getElementsByClassName() */
+		</script>
+	</head>
+	<body>
+		<h1>Mon nouveau document</h1>
+		<p>Premier paragraphe</p>
+		<p>Deuxième paragraphe</p>
+		<noscript>
+			<p>Veuillez activer JavaScript</p>
+		</noscript>
+	</body>
+</html>

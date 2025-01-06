@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+	<title>Mémo jQuery</title>
+	<meta name="viewport" content="width=device-width">
+	<link rel="shortcut icon" href="dist/favicon.ico">
+	<link rel="stylesheet" href="dist/prism.css">
+	<link rel="stylesheet" href="dist/styles.css">
+</head>
+<body>
+	<div class="page">
+        <header class="header">
+            <h1 class="header__title">Mémo jQuery</h1>
+            <nav class="nav">
+                <ul class="nav__content">
+                </ul>
+            </nav>
+            <div id="bottom" class="header__bottom">
+                <div id="info" class="info">
+                    <a class="info__link" href="http://www.virtuoworks.com/" title="Site de VirtuoWorks">
+                        <img
+                            class="info__logo"
+                            src="https://www.virtuoworks.com/_next/static/media/logo_virtuoworks_white.9039aede.svg"
+                            alt="logo virtuoworks">
+                    </a>
+                    <a class="info__link info__mail" href="mailto:marc.boussoulade@virtuoworks.com">Marc<br />
+                        Boussoulade</a>
+                </div>
+                <div class="nav__change">
+                    <button id="hide-all" class="nav__change-action">Tout masquer</button>
+                </div>
+            </div>
+            <div id="bouton-nav" class="nav__button">&#9776;</div>
+        </header>
+    </div>
+    <div id="fill" class="page__fill">.</div>
+	<div id="filter" class="page__filter"></div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="dist/script.js"></script>
+</body>
+</html>

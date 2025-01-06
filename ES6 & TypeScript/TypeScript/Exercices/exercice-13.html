@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>TypeScript : Exercice 13</title>
+			<!---------------------------------
+			-----------PRÉSENTATION-----------
+			----------------------------------
+
+				Dans une interface, on peut également définit des propriétés en lecture seule. En effet, certaines propriétés ne doivent être modifiables que lorsqu’un objet est créé pour la première fois.
+				Pour cela, vous utilisez le mot-clef readonly placé avant le nom de la propriété:
+
+				===code_ts=================================
+					interface ValeursMaximales {
+						readonly parties: number;
+						readonly somme: number;
+					}
+					
+					let personnage1 : ValeursMaximales = { parties: 5, somme: 60 };
+					personnage1.parties = 3; // erreur
+				===========================================
+			----------------------------------
+			-------------EXERCICE-------------
+			----------------------------------
+			
+			-------
+			-- 1 --
+			-------
+				Reprenez le code de l'exercice précédent.
+				Modifiez le de telle façon que le nom et le type soient en lecture seule
+
+			-------
+			-- 2 --
+			-------
+				Modifiez le nombre de convives des recettes après la création des fiches correspondantes.
+				Affichez le nombre de convives dans la page en plus du nom et des ingrédients.
+
+			-->
+	</head>
+	<body>
+		<h1>TypeScript : Exercice </h1>
+        <p>Un paragraphe</p>
+		<noscript>
+			<p>Veuillez activer JavaScript</p>
+		</noscript>
+	</body>
+</html>

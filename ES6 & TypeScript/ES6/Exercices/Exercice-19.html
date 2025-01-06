@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>JavaScript : Exercice 19</title>
+		<script>
+			/*********************************
+			***********PRESENTATION***********
+			**********************************
+				La balise <canvas> est utilisée pour faire du dessin 2D ou 3D dans le navigateur. Elle propose une API standard pour dessiner des formes, créer des effets, manipuler des pixels, afficher et manipuler des images, etc.
+
+				Pour dessiner sur une balise <canvas> on commence par récupérer une référence à l'élément <canvas> du DOM, puis on appelle la méthode `.getContext()` sur cette référence en passant le paramètre "2d" comme suit :
+
+				ES5--------------------------------------------------------------------
+				// On récupère une référence à la balise <canvas>.
+				const élémentCanvas = document.getElementById("canvas");
+
+				// On obtient un objet de type `CanvasRenderingContext2D` grâce auquel
+				dessiner sur le canvas.
+				const contexte = élémentCanvas.getContext("2d");
+				-----------------------------------------------------------------------
+
+				Documentation :
+				- https://developer.mozilla.org/fr/docs/Web/HTML/Canvas
+				- https://developer.mozilla.org/fr/docs/Web/API/CanvasRenderingContext2D
+			*/
+
+			/*********************************
+			*************EXERCICE*************
+			**********************************
+			** 1 **
+				Récupérez une référence à l'élément <canvas> du DOM et stockez-la dans une variable.
+
+				Faites en sorte d'obtenir une référence au contexte de rendu 2D du canevas récupéré précédemment et stockez-la dans une autre variable.
+
+				Appelez la méthode `.strokeRect()` sur l'objet représentant le contexte de rendu 2D récupéré à la question 2 afin de dessiner le contour d'un rectangle sur le canevas. Cette méthode prend en arguments l'abscisse et l'ordonnée du coin supérieur gauche du rectangle, ainsi que la largeur et la hauteur.
+
+				https://developer.mozilla.org/fr/docs/Web/API/CanvasRenderingContext2D/strokeRect
+
+				Nous allons nous servir de la balise <canvas> de la page pour dessiner nos rectangles.
+
+				Effacez le canevas en appelant la méthode `.clearRect()` sur l'objet de contexte de rendu 2D.
+				Cette méthode prend en argument les coordonnées du coin supérieur gauche du rectangle à effacer ainsi que la largeur et la hauteur. Le coin supérieur gauche du canevas est à (0, 0) et la largeur et la hauteur du canevas sont des propriété de l'objet obtenu à la question 1.
+
+				5. 
+			*/	
+
+			/*
+			** 2 **
+				Reprenez le code de la classe Rectangle de l'exercice précédent et ajoutez-y une méthode d'instance appelée `dessiner` qui prendra en paramètre un contexte de rendu 2D `contexte` et un booléen `remplissage` pour préciser si l'on souhaite un rectangle vide ou plein.
+
+				Faites en sorte que l'appel à cette fonction déclenche l'affichage du rectangle dans la balise <canvas>. Vous ferez appel à la méthode `.strokeRect()` (pour un dessin de contour) ou `.fillRect()` (pour un rectangle plein) sur l'objet de contexte de rendu 2D en fonction de la valeur du paramètre `remplissage`.
+			*/	
+
+			/*	
+			** 3 **
+				Créez deux rectangles r1 et r2 et appelez leurs méthodes `.dessiner()` pour afficher leur contour dans la balise <canvas>.
+				r1 : (100, 50), (200, 50), (200, 120), (100, 120)
+				r2 : (160, 90), (300, 90), (300, 250), (160, 250)
+
+				Créez un rectangle r3 qui sera le résultat de l'intersection de r1 et r2. Dessinez ce rectangle plein dans la balise <canvas>.
+			*/
+
+			/*	
+			** 3 **
+				Réécrivez la classe Rectangle en code ES5 (appelez-la `RectangleES5`).
+			*/
+				window.onload = function() {
+					const canevas = document.getElementById('canvas');
+					const ctx = canevas.getContext('2d');
+					ctx.fillStyle = "rgb(160,10,50)";
+					ctx.fillRect(20,20,100,100);
+				}
+		</script>
+		<style>
+			canvas {
+				border: 1px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Mon nouveau document</h1>
+		<!-- La balise canvas dans laquelle nous allons dessiner nos rectangles. -->
+		<canvas id="canvas" width="480" height="320"></canvas>
+		<noscript>
+			<p>Veuillez activer JavaScript</p>
+		</noscript>
+	</body>
+</html>

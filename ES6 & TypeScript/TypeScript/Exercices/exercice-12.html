@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>TypeScript : Exercice 12</title>
+			<!---------------------------------
+			-----------PRÉSENTATION-----------
+			----------------------------------
+
+				Dans une interface, il est possible de définir des propriétés facultatives. Cela est souvent utilisé lorsque l'on définit un élément qui peut posséder de nombreuses options, qui ne serons pas toujours toutes définies.
+
+				Chaque propriété optionnelle possède un point d'interrogation à la fin du nom.
+
+				Voici un exemple de ce modèle:
+
+				===code_ts=================================
+					interface RectangleProprietee {
+						couleurDeFond?: string;
+						largeur?: number;
+						hauteur: number;
+					}
+					
+					function creationCarre(donnees: RectangleProprietee): {couleur: string, hauteur: number, largeur:number} {
+						let nouveauCarre = {couleur: string; hauteur: donnees.hauteur, largeur: donnees.hauteur};
+						if (donnees.couleur) {
+							nouveauCarre.couleur = donnees.couleur;
+						}
+						if (donnees.largeur) {
+							nouveauCarre.largeur = donnees.largeur;
+						}
+						return nouveauCarre;
+					}
+					
+					let mon carre = createSquare({color: "black"});
+				============================================
+
+			----------------------------------
+			-------------EXERCICE-------------
+			----------------------------------
+
+			-------
+			-- 1 --
+			-------
+				- Créez une interface pour des recettes. Celle-ci comprendra les éléments suivants :
+					- nom
+					- nombre de personnes
+					- type (plat, dessert…)
+					- ingrédients (liste optionnelle)
+					- prix (texte optionnel : bon marché, coûteux…)
+				- Créez deux fiches de recettes à partir de l'interface. Chacune n'utilisera qu'une propriété optionnelle.
+			 
+			-------
+			-- 2 --
+			-------
+				
+				- Créez une fonction qui prendra comme argument une fiche de recette et affichera dans la page la liste de ses ingrédients précédé du nom de la recette si celle-ci est prévue pour plus de 4 convives et possède des ingrédients (la recette possédant des ingrédients sera donc destinée à plus de six convives).
+				- Quand vous souhaitez déclarer le type d'une variable contenant une donnée de type élément HTML, écrivez le code suivant :
+
+				===code_ts=============================================
+					let unElement: HTMLElement = document.createElement('p');
+				=======================================================
+
+			-->
+	</head>
+	<body>
+		<h1>TypeScript : Exercice 12</h1>
+        <p>Un paragraphe</p>
+		<noscript>
+			<p>Veuillez activer JavaScript</p>
+		</noscript>
+	</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>JavaScript : Exercice 4</title>
+		<script>
+			/*********************************
+			***********PRESENTATION***********
+			**********************************
+				ES6 introduit la possibilité de créer des chaînes de caractères appelées littéraux de gabarits ("template strings") en déclarant la chaîne entourée de ` (accent grave ou "backtick") :
+
+				ES6----------------------------------------------------------------------------
+				const maChaîne = `une chaîne de caractères à la mode ES6`;
+				-------------------------------------------------------------------------------
+
+				Les littéraux de gabarits permettent d'interpoler des valeurs calculées à l'intérieur des caractères `${}`, sans recourir à la concaténation comme pour des chaînes classiques.
+				
+				Ainsi:
+
+				ES6----------------------------------------------------------------------------
+				const nom = "Alfred";
+				const taille = "petit";
+				const élément = "du feu";
+				const texte = `${nom} est un ${taille} dragon qui crache ${élément}.`;
+
+				console.log(texte); // "Alfred est un petit dragon qui crache du feu."
+				-------------------------------------------------------------------------------
+
+
+				-------------------------------------------------------------------------------
+				var nom = "Alfred";
+				var taille = "petit";
+				var élément = "du feu";
+				var texte = nom + " est un " + taille + " dragon qui crache " + élément + ".";
+
+				console.log(texte); // "Alfred est un petit dragon qui crache du feu."
+				-------------------------------------------------------------------------------
+			*/
+
+			/*********************************
+			*************EXERCICE*************
+			**********************************
+			** 1 **
+				Écrivez une fonction «Cluedo» qui prend en argument un nom de suspect, une pièce et une arme, et qui renvoie en sortie une chaîne de caractères formant une accusation de la forme :
+				"C'est le colonel Moutarde qui a tué le Docteur Lenoir dans la cuisine avec le chandelier";
+			*/	
+
+			/*
+			** 2 **
+				Créez un tableau de noms de suspects, un tableau d'armes et un tableau de pièces.
+				En vous aidant de la méthode Math.random(), écrivez une fonction qui renvoie un nombre entier compris entre 0 et N, où N est un entier positif qui sera fourni en argument à la fonction.
+				
+			*/	
+
+			/*	
+			** 3 **
+				En vous servant de la fonction de nombres entiers aléatoires précédente, modifiez la fonction «Cluedo» afin qu'elle renvoie des accusations aléatoires en combinant les 3 tableaux précédents.
+			*/
+
+		</script>
+	</head>
+	<body>
+		<h1>Mon nouveau document</h1>
+		<p>Premier paragraphe</p>
+		<p>Deuxième paragraphe</p>
+		<noscript>
+			<p>Veuillez activer JavaScript</p>
+		</noscript>
+	</body>
+</html>

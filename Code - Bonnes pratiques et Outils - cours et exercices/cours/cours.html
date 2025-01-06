@@ -1,0 +1,839 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Code : Bonnes pratiques et Outils</title>
+    <link rel="stylesheet" href="./lib/prism/prism.css" type="text/css">
+    <link rel="stylesheet" href="./css/style.css" type="text/css">
+    <link type="image/x-icon" rel="icon" href="img/favicon.png">
+    <link type="image/x-icon" rel="shortcut icon" href="img/favicon.png">
+    <script src="./lib/prism/prism.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Code : Bonnes pratiques et Outils</h1>
+        <div class="copyright">
+            <p>Code : Bonnes pratiques et Outils - Sami Radi - <a target="_blank" href="http://www.virtuoworks.com/"
+                    title="VirtuoWorks">VirtuoWorks&reg;</a> - tous droits réservés&copy;</p>
+        </div>
+        <div class="page-break"></div>
+        <h2>Sommaire</h2>
+        <nav>
+            <ol>
+                <li>
+                    <p><a href="#/chapitre-1">Dépendances du Code</a></p>
+                    <ol>
+                        <li>
+                            <p><a href="#/chapitre-1/partie-1">Gestion des dépendances</a></p>
+                        </li>
+                        <li>
+                            <p><a href="#/chapitre-1/partie-3">Gestionnaires de dépendances</a></p>
+                        </li>
+                    </ol>
+                </li>
+                <li>
+                    <p><a href="#/chapitre-2">Documentation du Code</a></p>
+                    <ol>
+                        <li>
+                            <p><a href="#/chapitre-2/partie-1">Normes pour l'écriture des commentaires</a></p>
+                        </li>
+                        <li>
+                            <p><a href="#/chapitre-2/partie-2">Générer une documentation technique</a></p>
+                        </li>
+                    </ol>
+                </li>
+                <li>
+                    <p><a href="#/chapitre-3">Lisibilité et qualité du Code</a></p>
+                    <ol>
+                        <li>
+                            <p><a href="#/chapitre-3/partie-1">Utiliser un outil de contrôle de la forme</a></p>
+                        </li>
+                        <li>
+                            <p><a href="#/chapitre-3/partie-2">Utiliser un outil de contrôle de la qualité</a></p>
+                        </li>
+                    </ol>
+                </li>
+                <li>
+                    <p><a href="#/chapitre-4">Modularisation du Code</a></p>
+                    <ol>
+                        <li>
+                            <p><a href="#/chapitre-4/partie-1">Principe de la modularisation</a></p>
+                        </li>
+                        <li>
+                            <p><a href="#/chapitre-4/partie-2">Techniques de modularisation</a></p>
+                        </li>
+                    </ol>
+                </li>
+                <li>
+                    <p><a href="#/chapitre-5">Design patterns de Code</a></p>
+                    <ol>
+                        <li>
+                            <p><a href="#/chapitre-5/partie-1">Objectifs d'un design pattern</a></p>
+                        </li>
+                        <li>
+                            <p><a href="#/chapitre-5/partie-2">Découverte d'un design pattern</a></p>
+                        </li>
+                    </ol>
+                </li>
+            </ol>
+        </nav>
+    </header>
+    <section class="chapitre chapitre-1" id="/chapitre-1">
+        <header>
+            <h3>1. Dépendances du Code</h3>
+            <nav>
+                <ol>
+                    <li>
+                        <p><a href="#/chapitre-1/partie-1">Gestion des dépendances</a></p>
+                    </li>
+                    <li>
+                        <p><a href="#/chapitre-1/partie-2">Gestionnaires de dépendances</a></p>
+                    </li>
+                </ol>
+            </nav>
+        </header>
+        <section class="partie partie-1 chapitre-1-partie-1" id="/chapitre-1/partie-1">
+            <h4>1.1. Gestion des dépendances</h4>
+            <h5>Qu'est-ce qu'une dépendance ?</h5>
+            <p>Un projet informatiques repose sur un ensemble de composants logiciels. Ces composants logiciels peuvent
+                être :</p>
+            <ul>
+                <li>
+                    <p>des composants <b>créés par le(s) programmeur(s)</b> qui travaillent sur le projet</p>
+                </li>
+                <li>
+                    <p>des composants logiciels qui ont été <b>créés par des tiers</b></p>
+                </li>
+            </ul>
+            <p>La combinaison de ces composants avec les autres éléments constitutifs d'un projet informatique
+                contribuent à la création d'un <b>système modulaire</b>.</p>
+            <p>Un <b>système modulaire</b> est donc un système qui repose sur la combinaison de composants logiciels.<p>
+                    <p>Le potentiel de réutilisabilité de certains de ces composants est faible et, pour d'autres, <b>le
+                            potentiel de réutilisabilité est fort</b>.</p>
+                    <p>Les <b>composants logiciels réutilisables</b> :</p>
+                    <ul>
+                        <li>
+                            <p>Peuvent être utilisés au sein d'autres projets informatiques dont la <b>nature</b> et les
+                                <b>objectifs </b> diffèrent;</p>
+                        </li>
+                        <li>
+                            <p>Peuvent prendre la forme de <b>librairies de composants</b> ou de <b>composants
+                                    individuels</b>.</p>
+                        </li>
+                    </ul>
+                    <p>Un <b>composant logiciel réutilisable</b> dont dépend un projet peut être qualifié de
+                        <b>dépendance du projet</b>. Le projet ne peut pas fonctionner sans ce composant.</p>
+                    <h5>Qu'est-ce que la gestion des dépendances ?</h5>
+                    <p>La <b>gestion des dépendances</b> est une <b>technique</b> pour :</p>
+                    <ul>
+                        <li><b>Déclarer</b>;</li>
+                        <li><b>Retrouver</b>;</li>
+                        <li>et <b>Utiliser</b></li>
+                    </ul>
+                    <p>de façon <b>automatique</b> les <b>dépendances</b> nécessaires au bon fonctionnement d'un projet.
+                    </p>
+        </section>
+        <section class="partie partie-2 chapitre-1-partie-2" id="/chapitre-1/partie-2">
+            <h4>1.2. Gestionnaires de dépendances</h4>
+            <h5>Qu'est-ce qu'un gestionnaire de dépendances ?</h5>
+            <p>Pour de nombreux langages de programmation, des outils ont été créés par des organisations et/ou des
+                communautés open-source pour faciliter la gestion des dépendances, les <b>gestionnaires de
+                    dépendances</b>.</p>
+            <p>Les <b>gestionnaires de dépendances</b> peuvent également être appelés <b>gestionnaires de paquets</b>.
+            </p>
+            <h5>Quels principes fondamentaux ?</h5>
+            <p><u><b>Quel que soit le langage</b></u>, les <b>gestionnaires de dépendances</b> fonctionnent tous sur les
+                mêmes principes fondamentaux :</p>
+            <ul>
+                <li>
+                    <p>Pour <b>Déclarer</b> les dépendances, ils proposent de créer un <b>fichier de configuration</b>
+                        contenant la <b>liste des dépendances</b> et leur <b>version</b>. Cette version respecte les règles
+                        sémantiques de version <b>semver</b> (<a href="https://semver.org/lang/fr/"
+                            target="_blank">détaillées ici</a>);</p>
+                </li>
+                <li>
+                    <p>Pour <b>Retrouver</b> les dépendances, il mettent à disposition de leurs utilisateurs un <b>site
+                            internet - un registre -</b> qui est fréquemment mis à jour et qui met à disposition du
+                        gestionnaire de dépendances la <b>liste des dépendances</b> disponibles ainsi que leur
+                        <b>localisation</b> :
+                        <ul>
+                            <li>
+                                <p>Généralement, l'<b>adresse d'un dépôt GIT</b> pour télécharger la dépendance;</p>
+                            </li>
+                            <li>
+                                <p>L'<b>adresse d'un dépôt lié à un autre système de gestion de code source</b> (SVN,
+                                    Mercurial, ...) </p>
+                            </li>
+                            <li>
+                                <p>Ou, plus simplement, un <b>URL de téléchargement pour un format d'archive</b>.</p>
+                            </li>
+                        </ul>
+                    </p>
+                </li>
+                <li>
+                    <p>Enfin, pour <b>Utiliser</b> les dépendances, les gestionnaires de dépendances installent les
+                        dépendances au sein du projet selon des <b>règles d'installation prédictibles</b>, généralement
+                        un dossier dont le nom est fixé par défaut ou par la configuration, et des <b>règles
+                            d'utilisation fixées</b> par convention ou par la configuration.</p>
+                </li>
+            </ul>
+            <h5>Quels outils pour JavaScript/ECMAScript ?</h5>
+            <p>Dans l'univers JavaScript/ECMAScript, 3 outils se sont imposés pour gérer les dépendances (du plus
+                populaire au moins populaire) :</p>
+            <ul>
+                <li>
+                    <p><b>npm</b>, le gestionnaire de dépendances open source officiel de Node.js qui existe depuis 2010
+                        (<a href="https://www.npmjs.com/" target="_blank">Site Officiel</a>);</p>
+                </li>
+                <li>
+                    <p><b>yarn</b>, un gestionnaire de dépendances open source développé à l'origine par Facebook qui
+                        existe depuis 2016 (<a href="https://yarnpkg.com/" target="_blank">Site Officiel</a>);</p>
+                </li>
+                <li>
+                    <p><b>bower</b> (progressivement deprécié au profit des précedents), un gestionnaire de dépendances
+                        open source développé à l'origine par Twitter qui existe depuis 2012 (<a
+                            href="https://bower.io/" target="_blank">Site Officiel</a>).</p>
+                </li>
+            </ul>
+            <p>Nous intéresserons principalement à <b>npm</b> et <b>yarn</b>.</p>
+            <h5>Quelles sont les caractéristiques clés de npm ?</h5>
+            <ul>
+                <li>
+                    <p><b>Installation :</b> npm est installé en même temps que Node.js;</p>
+                </li>
+                <li>
+                    <p><b>Utilisation :</b> s'utilise à partir de l'invite de commande.</p>
+                    <pre>
+                      <code class="language-bash">
+# Afficher la version de npm
+npm --version</code></pre>
+                </li>
+                <li>
+                    <p><b>Documentation :</b> la documentation officielle de npm est <a href="https://docs.npmjs.com/"
+                            target="_blank">docs.npmjs.com</a>;</p>
+                </li>
+                <li>
+                    <p><b>Configuration :</b> le fichier de configuration de npm est un fichier intitulé
+                        <code>package.json</code> situé à la racine d'un projet. Ce fichier peut être initialisé par npm
+                        comme suit à partir de la racine d'un projet :</p>
+                    <pre>
+                        <code class="language-bash">
+npm init</code></pre>
+                </li>
+                <li>
+                    <p><b>Registre :</b> le registre de npm est <a href="https://www.npmjs.com/"
+                            target="_blank">www.npmjs.com</a>;</p>
+                </li>
+                <li>
+                    <p><b>Utilisation :</b> lorsqu'une installation de dépendances est effectuée à la racine d'un projet,
+                        la dépendance est installée par convention dans un sous-dossier du dossier
+                        <code>node_modules</code> du projet.</p>
+                    <pre>
+                      <code class="language-bash">
+# Installer une dépendance avec npm
+# à partir de la racine d'un projet
+npm i [nom-de-la-dépendance]</code></pre>
+                    <p>Pour démarrer un projet basé sur Node.js et qui utilise des dépendances gérées par npm :</p>
+                    <pre><code class="language-bash">node [fichier-principal-du-projet]</code></pre>
+                </li>
+            </ul>
+            <h5>Quelles sont les caractèristiques clés de yarn ?</h5>
+            <ul>
+                <li>
+                    <p><b>Installation :</b> yarn peut être installé en suivant la procédure <a
+                            href="https://yarnpkg.com/getting-started/install" taget="_blank">proposée ici</a>.
+                        <pre><code class="language-bash">
+# A partir d'une invite de commande
+# ouverte en tant qu'ADMINISTRATEUR
+# du système :
+corepack enable</code></pre>
+                    </p>
+                </li>
+                <li>
+                    <p><b>Utilisation :</b> s'utilise à partir de l'invite de commande.
+                        <pre><code class="language-bash">
+# Afficher la version de yarn
+yarn --version</code></pre>
+                    </p>
+                    </p>
+                </li>
+                <li>
+                    <p><b>Documentation :</b> la documentation officielle de yarn est <a
+                            href="https://yarnpkg.com/getting-started" target="_blank">yarnpkg.com/getting-started</a>;
+                    </p>
+                </li>
+                <li>
+                    <p><b>Configuration :</b> les fichiers de configuration de yarn sont 2 fichiers intitulés
+                        <code>package.json</code> (pour les dépendances) et <code>.yarnrc.yml</code> (pour la
+                        configuration de yarn lui-même) situés à la racine d'un projet. Ces fichiers peuvent être
+                        initialisés par yarn comme suit à partir de la racine d'un projet :
+                        <pre><code class="language-bash">
+yarn init -2</code></pre>
+                    </p>
+                </li>
+                <li>
+                    <p><b>Registre :</b> le registre de yarn est <a href="https://yarnpkg.com/"
+                            target="_blank">yarnpkg.com</a>;</p>
+                </li>
+                <li>
+                    <p><b>Utilisation :</b> lorsqu'une installation de dépendances est effectuée à la racine d'un
+                        projet, la dépendance est installée par convention dans un sous-dossier du dossier
+                        <code>.yarn</code> du projet.</p>
+                    <pre>
+                          <code class="language-bash">
+# Installer une dépendance avec yarn
+# à partir de la racine d'un projet
+yarn add [nom-de-la-dépendance]
+yarn install</code></pre>
+                    <p>Pour démarrer un projet basé sur Node.js et qui utilise des
+                        dépendances gérées par yarn :</p>
+                    <pre><code class="language-bash">
+yarn node [fichier-principal-du-projet]</code></pre>
+                    </p>
+                </li>
+            </ul>
+        </section>
+    </section>
+    <section class="chapitre chapitre-2" id="/chapitre-2">
+        <header>
+            <h3>2. Documentation du Code</h3>
+            <nav>
+                <ol>
+                    <li>
+                        <p><a href="#/chapitre-2/partie-1">Normes pour l'écriture des commentaires</a></p>
+                    </li>
+                    <li>
+                        <p><a href="#/chapitre-2/partie-2">Générer une documentation technique</a></p>
+                    </li>
+                </ol>
+            </nav>
+        </header>
+        <section class="partie partie-1 chapitre-2-partie-1" id="/chapitre-2/partie-1">
+            <h4>2.1. Normes pour l'écriture des commentaires</h4>
+            <p>Au sein d'un programme informatique, on trouve du <b>code exécutable</b> écrit par des programmeurs.</p>
+            <p>On peut également y placer des <b>commentaires</b> qui n'ont pas vocation à être exécutés. Les <b>commentaires</b> sont des <b>descriptions qui peuvent être lues par un humain</b> et qui <b>expliquent ce que fait le code</b>.</p>
+            <p>Les commentaires :</p>
+            <ul>
+                <li><p>Facilitent la <b>maintenance</b> du code;</p></li>
+                <li><p>Aident à la <b>détection des erreurs</b> lors de la relecture du code;</p></li>
+                <li><p>Facilitent la <b>transmission de la connaissance</b> au sein des équipes;</p></li>
+            </ul>
+            <p>Un <b>code bien documenté</b> est aussi important qu'un <b>code bien écrit</b>.</p>
+            <p><u><b>La plupart des languages</b></u> proposent des <b>normes</b> pour l'écriture des commentaires.</p>
+            <p>Ces normes ont pour objectif de permettre à des programmeurs venant d'horizons différents de pouvoir
+                lire et comprendre facilement les commentaires écrits par leurs pairs.</p>
+            <p>La normalisation des commentaires offre, certes, des avantages en termes de lisibilité mais permet également de créer des outils qui sont en mesure de <b>générer une documentation technique à partir des commentaires</b>.</p>
+            <p>En JavaScript/ECMAScript, plusieurs solutions sont à la fois :</p>
+            <ul>
+                <li><p>un <b>ensemble de normes</b> pour l'écriture des commentaires;</p></li>
+                <li><p>un <b>outil</b> pour générer une documentation technique à partir des commentaires.</p></li>
+            </ul>
+            <p>On en citera 3 par ordre de popularité (de la plus populaire à la moins populaire) :</p>
+            <ul>
+                <li><a href="https://jsdoc.app/" target="_blank">JSDoc</a>;</p></li>
+                <li><a href="https://esdoc.org/" target="_blank">ESDoc</a>;</p></li>
+                <li>et <a href="https://documentation.js.org/" target="_blank">Documentation</a>;</p></li>
+            </ul>
+            <p>Nous nous attarderons particulièrement sur JSDoc dont :</p>
+            <ul>
+                <li><p>Les règles peuvent être consultées sur le <a href="https://jsdoc.app/about-getting-started.html#getting-started" target="_blank">site officiel</a>;</p></li>
+                <li><p>Et la procédure d'installation et d'utilisation sur le <a href="https://github.com/jsdoc/jsdoc">Depôt GIT de JSDoc</a>.</p></li>
+            </ul>
+            <p>Pour faciliter la création de commentaires conforme à la spécification JSDoc, on peut utiliser l'extension <a href="https://marketplace.visualstudio.com/items?itemName=oouo-diogo-perdigao.docthis" target="_blank">Document This</a>
+                de Visual Studio Code.</p>
+            <p><b>ATTENTION, l'extension de Visual Studio Code ne fonctionne que si JSDoc est installé sur le projet.</b></p>
+            <p>Lorsque l'extension est installée, on peut utiliser le raccourci - à taper 2 fois d'affilée - : <code>Ctrl+Alt+D</code> sur un code selectionné pour générer une partie des commentaires.</p>
+        </section>
+        <section class="partie partie-2 chapitre-2-partie-2" id="/chapitre-2/partie-2">
+            <h4>2.2. Générer une documentation technique</h4>
+            <p>Pour installer JSDoc, après avoir initialisé un projet avec npm :</p>
+            <pre><code class="language-bash">
+                npm i jsdoc
+            </code></pre>
+            <p>Pour utiliser JSDoc pour générer de la documentation à partir des commentaires :</p>
+            <ul>
+                <li><p>Pour un fichier de code source <code>a.js</code> :</p><pre><code class="language-bash">
+                    npx jsdoc a.js
+                </code></pre></li>
+                <li><p>Pour un fichier de code source <code>a.js</code> et un fichier <code>b.js</code> :</p><pre><code class="language-bash">
+                    npx jsdoc a.js b.js
+                </code></pre></li>
+                <li><p>Pour tous les fichiers se terminant par l'extension <code>.js</code> :</p><pre><code class="language-bash">
+                    npx jsdoc *.js
+                </code></pre></li>
+                <li><p>Pour tous les fichiers dans un dossier <code>src</code> et tous les sous-dossiers du dossier <code>src</code> :</p><pre><code class="language-bash">
+                    npx jsdoc -r src
+                </code></pre></li>
+            </ul>
+        </section>
+        <p>Par défaut la documentation est générée dans le dossier <code>out</code> à la racine du projet.<p>
+        <p> Le fichier <code>index.html</code> est le point d'entrée de la documentation.</p>
+    </section>
+    <section class="chapitre chapitre-3" id="/chapitre-3">
+        <header>
+            <h3>3. Lisibilité et qualité du Code</h3>
+            <nav>
+                <ol>
+                    <li>
+                        <p><a href="#/chapitre-3/partie-1">Utiliser un outil de contrôle de la forme</a></p>
+                    </li>
+                    <li>
+                        <p><a href="#/chapitre-3/partie-2">Utiliser un outil de contrôle de la qualité</a></p>
+                    </li>
+                </ol>
+            </nav>
+        </header>
+        <section class="partie partie-1 chapitre-3-partie-1" id="/chapitre-3/partie-1">
+            <h4>3.1. Utiliser un outil de contrôle de la forme</h4>
+            <p>La <b>normalisation</b> de la présentation et de la mise en forme du code propose les même avantages que l'écriture de commentaires. Elle facilite :</p>
+            <ul>
+                <li><p>La <b>maintenance</b> du code;</p></li>
+                <li><p>La <b>détection des erreurs</b> au sein du code;</p></li>
+                <li><p>La <b>transmission de connaissances</b> au sein d'une équipe;</p></li>
+            </ul>
+            <p>En JavaScript/ECMAScript, l'utilitaire <a href="https://prettier.io/" target="_blank">Prettier</a> est une solution reconnue pour la présentation et la mise en forme du code.</p>
+            <p>La documentation pour l'installation et l'utilisation de Prettier est disponible sur le <a href="https://prettier.io/docs/en/install.html" target="_blank">site officiel</a>.</p>
+            <p>Pour <b>installer</b> Prettier à partir de la racine d'un projet initialisé avec <code>npm :</code></p>
+            <pre><code class="language-bash">
+                npm install --save-dev --save-exact prettier
+            </code></pre>
+            <p>Prettier nécessite un fichier de configuration <code>.prettierrc.json</code> qui peut être vide par défaut. Pour créer ce fichier :</p>
+            <pre><code class="language-bash">
+                echo {}> .prettierrc.json
+            </code></pre>
+            <p>Enfin pour formatter de façon uniforme tous les fichiers d'un dossier <code>src</code> avec Prettier :</p>
+            <pre><code class="language-bash">
+                npx prettier src
+            </code></pre>
+            <p>On peut également installer l'extension <a href="https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode" target="_blank">Prettier - Code Formatter</a> de Visual Studio Code pour pouvoir lancer automatiquement Prettier à partir de l'éditeur sur les fichiers sur lesquels on travaille.</p>
+            <p><b>ATTENTION, l'extension de Visual Studio Code ne fonctionne que si Prettier est installé sur le projet.</b></p>
+            <p>Pour activer le formattage automatique du code des fichiers javascript, il faut ajouter la configuration suivante aux paramètres de Visual Studio Code :</p>
+            <pre>
+                <code class="language-javascript">
+                    // Paramètre par défaut
+                    "editor.formatOnSave": false,
+                    // Activer Prettier à la sauvegarde pour le langage JavaScript
+                    "[javascript]": {
+                        "editor.formatOnSave": true
+                    },
+                    // Activer Prettier à la sauvegarde pour le langage TypeScript aussi par exemple
+                    "[typescript]": {
+                        "editor.formatOnSave": true
+                    }
+                </code>
+            </pre>
+        </section>
+        <section class="partie partie-2 chapitre-3-partie-2" id="/chapitre-3/partie-2">
+            <h4>3.2. Utiliser un outil de contrôle de la qualité</h4>
+            <p>En plus de la présentation et la mise en forme du code, on peut utiliser un <i>Linter</i>. Un <i>Linter</i> est un outil qui permet d'<b>analyser du code source</b> pour détecter :</p>
+            <ul>
+                <li><p>Des erreurs de programmation ou des éventuels bugs;</p></li>
+                <li><p>Des constructions syntaxiques qui peuvent engendrer des erreurs;</p></li>
+                <li><p>Des problèmes de présentation du code (le <i>Linter</i> ne met pas en forme le code comme un outil de mise en forme du code);</p></li>
+            </ul>
+            <p>En JavaScript/ECMAScript, l'utilitaire <a href="https://eslint.org/" target="_blank">ESLint</a> est une solution reconnue pour l'analyse du code.</p>
+            <p>La documentation pour l'installation et l'utilisation de ESLint est disponible sur le <a href="https://eslint.org/docs/user-guide/getting-started" target="_blank">site officiel</a>.</p>
+            <p>Pour <b>installer</b> ESLint à partir de la racine d'un projet initialisé avec <code>npm :</code></p>
+            <pre><code class="language-bash">
+                npm install eslint --save-dev
+            </code></pre>
+            <p>ESLint nécessite un fichier de configuration <code>.eslintrc.js</code> ou <code>.eslintrc.json</code> ou <code>.eslintrc.yml</code> qui contient des couples clés/valeurs de configuration par défaut. Pour créer ce fichier :</p>
+            <pre><code class="language-bash">
+                npx eslint --init
+                # Puis répondre au questionnaire en fonction de la nature du projet...
+            </code></pre>
+            <p>Enfin pour <i>Linter</i> tous les fichiers d'un dossier <code>src</code> avec ESLint :</p>
+            <pre><code class="language-bash">
+                npx eslint src
+            </code></pre>
+            <p>On peut également installer l'extension <a href="https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint" target="_blank">ESLint</a> de Visual Studio Code pour pouvoir lancer automatiquement ESLint à partir de l'éditeur sur les fichiers sur lesquels on travaille.</p>
+            <p><b>ATTENTION, l'extension de Visual Studio Code ne fonctionne que si ESLint est installé sur le projet.</b></p>
+            <p>Lorsque l'extension est activée, les erreurs détectées apparaîtront dans l'onglet <i>Problèmes</i> de Visual Studio Code lors de l'édition d'un fichier.</p>
+        </section>
+    </section>
+    <section class="chapitre chapitre-4" id="/chapitre-4">
+        <header>
+            <h3>4. Modularisation du Code</h3>
+            <nav>
+                <ol>
+                    <li>
+                        <p><a href="#/chapitre-4/partie-1">Principe de la modularisation</a></p>
+                    </li>
+                    <li>
+                        <p><a href="#/chapitre-4/partie-2">Techniques de modularisation</a></p>
+                    </li>
+                </ol>
+            </nav>
+        </header>
+        <section class="partie partie-1 chapitre-4-partie-1" id="/chapitre-4/partie-1">
+            <h4>4.1. Principe de la modularisation</h4>
+            <p>Les principes de la modularisation sont détaillés sur la <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules">page du site officiel</a> du MDN concernant les modules.</p>
+            <p>En résumé, la modularisation consiste à proposer une approche pour <b>diviser un programme</b> en plusieurs modules indépendants les uns des autres.</p>
+            <p>Plusieurs approches ont ainsi été développées au fil du temps sous la forme de <i>librairies</i> ou de <i>framework</i> ou <i>nativement</i> prise en charge par les systèmes.</p>
+            <p>A ce titre, on citera principalement les approches :</p>
+            <ul>
+                <li><p><code>CommonJS</code>, abrégée <code>CJS</code>, nativement disponible sur Node.js à l'aide de la méthode <code class="language-javascript">require()</code> pour faire appel à un module et <code class="language-javascript">exports</code> pour déclarer la valeur exportée par le module. Cette approche s'emploie généralement en <i>back-end</i>.</p></li>
+                <li><p><code>Asynchronous Module Definition</code>, abrégée <code>AMD</code>, implémentée à l'aide de <i>librairies</i> comme <a href="https://requirejs.org/" target="_blank">Require.JS</a> qui propose une fonction <code class="language-javascript">requirejs()</code> pour faire appel à un module. Cette approche s'emploie généralement en <i>front-end</i>.</p></li>
+                <li><p><code>ECMAScript Modules</code>, abrégée <code>ESM</code>, nativement disponible sur les systèmes prenant en charge les dernières versions du JavaScript/ECMAScript et qui s'emploie à l'aide des <b>mots-clés</b> <code class="language-javascript">import</code> pour faire appel à un module et <code class="language-javascript">export</code> pour déclarer une valeur exportée par le module. Cette approche s'emploie généralement en <i>front-end</i> ou <i>back-end</i>.</p></li>
+            </ul>
+        </section>
+        <section class="partie partie-2 chapitre-4-partie-2" id="/chapitre-4/partie-2">
+            <h4>4.2. Techniques de modularisation</h4>
+            <h5>Approche CJS</h5>
+            <p>Cette approche est principalement employée en <i>back-end</i>.</p>
+            <p>L'approche CJS est nativement disponible sur Node.JS et fait l'objet d'une <a href="https://nodejs.org/api/modules.html" target="_blank">Page de la documentation officielle</a>.</p>
+            <p>Cette méthode est implémentée à l'aide de :</p>
+            <ul>
+                <li><p>La méthode <code class="language-javascript">require()</code> est exécutée au sein du <i>module principal</i> qui nécessite le résultat de l'exécution d'un <i>module secondaire</i>;</p></li>
+                <li><p>La valeur de la propriété <code class="language-javascript">exports</code> est définie à l'issue de l'exécution du code du <i>module secondaire</i> et sa valeur sera la valeur retournée par la méthode <code class="language-javascript">require()</code> du <i>module principal</i>.</p></li>
+            </ul>
+            <p>C'est une approche <b>synchrone</b>. Tant que la totalité du code du <i>module secondaire</i> n'est pas exécutée, la méthode <code class="language-javascript">require()</code> <b>bloque</b> l'exécution du code du <i>module principal</i>.</p>
+            <p>On appelle cela l'<b>import statique</b> - <i>static import</i>.</p>
+            <p>Exemple sur Node.JS :</p>
+            <table>
+                <tr>
+                    <th>
+                        <i>module principal</i> : <code class="language-bash">principal.js</code>
+                    </th>
+                    <th>
+                        <i>module secondaire</i> : <code class="language-bash">secondaire.js</code>
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <pre><code class="language-javascript">
+// On utilise require pour demander l'exécution
+// du code du module secondaire :
+const valeurFournie = require('./secondaire.js');
+// On affiche la valeur retournée
+// par require dans la console :
+console.log(valeurFournie)
+                        </code></pre>
+                        Affiche dans la console :
+                        <pre><code class="language-javascript">
+{
+    fonctionFournie: function(){},
+    variableFournie: "Ceci est un texte",
+    operationFournie: 6
+}
+                        </code></pre>
+                    </td>
+                    <td>
+                        <pre><code class="language-javascript">
+// On définit des variables/valeurs
+const uneFonction = function(){};
+const uneVariable = "Ceci est un texte";
+const uneOperation = 3 + 3;
+// On assigne à exports la valeur (ici un objet)
+// qui sera retournée par l'exécution de require() :
+exports = {
+    fonctionFournie: uneFonction,
+    variableFournie: uneVariable,
+    operationFournie: uneOperation
+};
+                        </code></pre>
+                    </td>
+                </tr>
+            </table>
+            <p>Cette approche permet de modulariser un programme. <b>Seul le premier appel</b> à <code class="language-javascript">require()</code> entraîne l'execution du code du <i>module secondaire</i>.</p>
+            <p><b>Les appels suivants</b> retournent la valeur créée par le <i>module secondaire</i> lors de la première exécution. Cette méthode dispose donc d'un mécanisme de <b><i>cache</i></b>.</p>
+            <h5>Approche AMD</h5>
+            <p>Cette approche est principalement employée en <i>front-end</i>.</p>
+            <p>L'approche AMD est implémentée à l'aide de <i>frameworks</i> ou de <i>librairies</i> comme <i>Require.JS</i>, <i>WebPack</i> ou <i>Babel</i> après <i>transpilation</i>. Ici nous l'introduirons à l'aide de la librairie <a href="https://requirejs.org/" target="_blank">Require.JS</a>.</p>
+            <p>Cette méthode est implémentée à l'aide de :</p>
+            <ul>
+                <li><p>Une balise <code class="language-html">&lt;script></code> pour charger la <i>librairie</i> Require.JS avec un attribut <code class="language-html">data-main</code> dont la valeur est l'URL relative du <i>module principal</i>;</p></li>
+                <li><p>La méthode <code class="language-javascript">requirejs()</code> qui est exécutée au sein du <i>module principal</i> qui nécessite l'exécution d'un <i>module secondaire</i>;</p></li>
+            </ul>
+            <p>C'est une approche <b>asynchrone</b>. L'exécution du code du <i>module secondaire</i> <b>ne bloque pas</b> l'exécution du code du <i>module principal</i>.</p>
+            <p>L'exécution de la méthode <code class="language-javascript">requirejs()</code> <b>ne retourne pas</b> de valeur.</p>
+            <p>On appelle cela l'<b>import dynamique</b> - <i>dynamic import</i>.</p>
+            <p>Exemple sur un navigateur moderne quelconque :</p>
+            <table>
+                <tr>
+                    <th>
+                        <i>Page HTML</i> : <code class="language-bash">index.html</code>
+                    </th>
+                    <th>
+                        <i>module principal</i> dans : <code class="language-bash">scripts/principal.js</code>
+                    </th>
+                    <th>
+                        <i>module secondaire</i> dans : <code class="language-bash">scripts/secondaire.js</code>
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <pre><code class="language-html">
+&lt;!DOCTYPE html>
+&lt;html>
+    &lt;head>
+        &lt;title>Page HTML&lt;/title>
+        &lt;!-- l'attribut data-main attribute
+                permet à Require.JS de charger
+                scripts/principal.js après le
+                chargement de require.js -->
+        &lt;script
+            data-main="scripts/principal"
+            src="scripts/require.js"
+        >&lt;/script>
+    &lt;/head>
+    &lt;body>
+        &lt;h1>Page HTML&lt;/h1>
+    &lt;/body>
+&lt;/html>
+                        </code></pre>
+                    </td>
+                    <td>
+                        <pre><code class="language-javascript">
+// On utilise requirejs pour demander l'exécution
+// du code du module secondaire :
+requirejs(['scripts/secondaire'], function(valeurFournie){
+    // Ce callback est exécuté après l'exécution
+    // du code du module secondaire. l'argument
+    // valeurFournie reçoit la valeur retournée
+    // par le code du module secondaire.
+    // On affiche la valeur reçue par
+    // par le callback dans la console :
+    console.log(valeurFournie)
+});
+// La fonction requirejs NE RETOURNE RIEN
+                        </code></pre>
+                        Affiche dans la console :
+                        <pre><code class="language-javascript">
+{
+    fonctionFournie: function(){},
+    variableFournie: "Ceci est un texte",
+    operationFournie: 6
+}
+                        </code></pre>
+                    </td>
+                    <td>
+                        <pre><code class="language-javascript">
+// On définit des variables/valeurs
+const uneFonction = function(){};
+const uneVariable = "Ceci est un texte";
+const uneOperation = 3 + 3;
+// On assigne à exports la valeur (ici un objet)
+// qui sera retournée par l'exécution de require() :
+return {
+    fonctionFournie: uneFonction,
+    variableFournie: uneVariable,
+    operationFournie: uneOperation
+};
+                        </code></pre>
+                    </td>
+                </tr>
+            </table>
+            <p>L'exécution de la méthode <code class="language-javascript">requirejs()</code> entraîne le <b>téléchargement</b> et l'<b>exécution</b> du code du <i>module secondaire</i>.</p>
+            <p>Les exécution suivantes n'entraînent pas le <b>téléchargement</b> et l'<b>exécution</b> du code du <i>module secondaire</i>. La valeur fournie est la même que celle résultant de la première exécution du code du <i>module secondaire</i>.</p>
+            <p>En <i>front-end</i>, en plus du mécanisme de cache, la modularisation AMD permet de moins solliciter le réseau et d'améliorer les performances applicatives.</p>
+            <h5>Approche ESM</h5>
+            <p>Cette approche peut être employée en <i>back-end</i> ou en <i>front-end</i> si le système est suffisamment récent (version récente de node.js ou version récente de navigateur Internet).</p>
+            <p>L'approche ESM est nativement disponible sur Node.JS. Elle fait l'objet d'une <a href="https://nodejs.org/api/esm.html" target="_blank">Page de la documentation officielle</a> de Node.JS.</p>
+            <p>L'approche ESM est nativement disponible sur les navigateurs récents. Elle fait l'objet d'une <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Modules" target="_blank">Page de la documentation officielle</a> du MDN.</p>
+            <p>Cette méthode est implémentée à l'aide de :</p>
+            <ul>
+                <li><p>En <i>front-end</i> uniquement, des balises <code class="language-html">&lt;script></code> avec l'attribut <code class="language-html">type="module"</code> obligatoire pour tous les scripts;</p></li>
+                <li><p>En <i>front-end</i> et <i>en back-end</i>, du mot-clé <code class="language-javascript">import</code> pour les <b>imports statiques</b> ou de la méthode <code class="language-javascript">import()</code> pour les <b>imports dynamiques</b>. Le mot-clé ou la méthode sont utilisés au sein du <i>module principal</i> qui nécessite le résultat de l'exécution d'un <i>module secondaire</i>;</p></li>
+                <li><p>En <i>front-end</i> et <i>en back-end</i>, du mot-clé <code class="language-javascript">export</code> qui permet de définir chaque valeur qui sera fournie au <i>module principal</i>.</p></li>
+            </ul>
+            <p>C'est une approche <b>synchrone</b> si on utilise les <b>imports statiques</b>. C'est une approche <b>asynchrone</b> si on utilise les <b>imports dynamiques</b>.</p>
+            <p><b>ATTENTION</b>, en <i>front-end</i>, ESM ne fonctionne que si le document HTML initial ainsi que les scripts sont fournis par un serveur.</p>
+            <p>Exemple d'<b>import statique - synchrone</b> sur un navigateur moderne quelconque :</p>
+            <table>
+                <tr>
+                    <th>
+                        <i>Page HTML</i> : <code class="language-bash">index.html</code>
+                    </th>
+                    <th>
+                        <i>module principal</i> dans : <code class="language-bash">scripts/principal.js</code>
+                    </th>
+                    <th>
+                        <i>module secondaire</i> dans : <code class="language-bash">scripts/secondaire.js</code>
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <pre><code class="language-html">
+&lt;!DOCTYPE html>
+&lt;html>
+    &lt;head>
+        &lt;title>Page HTML&lt;/title>
+        &lt;script
+            type="module"
+            src="scripts/principal.js"
+        >&lt;/script>
+        &lt;script
+            type="module"
+            src="scripts/secondaire.js"
+        >&lt;/script>
+    &lt;/head>
+    &lt;body>
+        &lt;h1>Page HTML&lt;/h1>
+    &lt;/body>
+&lt;/html>
+                        </code></pre>
+                    </td>
+                    <td>
+                        <pre><code class="language-javascript">
+// On utilise le mot clé import pour demander
+// l'exécution du code du module secondaire :
+import * as valeurFournie from "scripts/secondaire.js"
+// On affiche la valeur retournée
+// par require dans la console :
+console.log(valeurFournie)
+                        </code></pre>
+                        Affiche dans la console :
+                        <pre><code class="language-javascript">
+{
+    fonctionFournie: function(){},
+    variableFournie: "Ceci est un texte",
+    operationFournie: 6
+}
+                        </code></pre>
+                    </td>
+                    <td>
+                        <pre><code class="language-javascript">
+// On définit des variables/valeurs
+const uneFonction = function(){};
+const uneVariable = "Ceci est un texte";
+const uneOperation = 3 + 3;
+// On utilise le mot-clé export pour définir
+// chaque variable dont la valeur sera fournie
+// et sous quel nom de propriété :
+export uneFonction as fonctionFournie;
+export uneVariable as variableFournie;
+export uneOperation as operationFournie;
+                        </code></pre>
+                    </td>
+                </tr>
+            </table>
+            <p>Exemple d'<b>import dynamique - asynchrone</b> sur un navigateur moderne quelconque :</p>
+            <table>
+                <tr>
+                    <th>
+                        <i>Page HTML</i> : <code class="language-bash">index.html</code>
+                    </th>
+                    <th>
+                        <i>module principal</i> dans : <code class="language-bash">scripts/principal.js</code>
+                    </th>
+                    <th>
+                        <i>module secondaire</i> dans : <code class="language-bash">scripts/secondaire.js</code>
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <pre><code class="language-html">
+&lt;!DOCTYPE html>
+&lt;html>
+    &lt;head>
+        &lt;title>Page HTML&lt;/title>
+        &lt;script
+            type="module"
+            src="scripts/principal.js"
+        >&lt;/script>
+        &lt;script
+            type="module"
+            src="scripts/secondaire.js"
+        >&lt;/script>
+    &lt;/head>
+    &lt;body>
+        &lt;h1>Page HTML&lt;/h1>
+    &lt;/body>
+&lt;/html>
+                        </code></pre>
+                    </td>
+                    <td>
+                        <pre><code class="language-javascript">
+// On utilise la fonction import() pour demander
+// l'exécution du code du module secondaire :
+import("scripts/secondaire.js").then(function(valeurFournie){
+    // Ce callback est exécuté après l'exécution
+    // du code du module secondaire. l'argument
+    // valeurFournie reçoit la valeur exportée
+    // par le code du module secondaire.
+    // On affiche la valeur reçue par
+    // par le callback dans la console :
+    console.log(valeurFournie)
+})
+// La fonction import() NE RETOURNE RIEN
+
+                        </code></pre>
+                        Affiche dans la console :
+                        <pre><code class="language-javascript">
+{
+    fonctionFournie: function(){},
+    variableFournie: "Ceci est un texte",
+    operationFournie: 6
+}
+                        </code></pre>
+                    </td>
+                    <td>
+                        <pre><code class="language-javascript">
+// On définit des variables/valeurs
+const uneFonction = function(){};
+const uneVariable = "Ceci est un texte";
+const uneOperation = 3 + 3;
+// On utilise le mot-clé export pour définir
+// chaque variable dont la valeur sera fournie
+// et sous quel nom de propriété :
+export uneFonction as fonctionFournie;
+export uneVariable as variableFournie;
+export uneOperation as operationFournie;
+                        </code></pre>
+                    </td>
+                </tr>
+            </table>
+            <p>Dans le cas d'un programme en <i>back-end</i>, on préféra les <b>imports statiques - synchrones</b> qui sont simples à implémenter et qui n'ont pas un impact important sur les performances applicatives.</p>
+            <p>Dans le cas d'un programme en <i>front-end</i>, on préféra les <b>imports dynamiques - asynchrones</b> qui permettent d'améliorer significativement les performances applicatives.</p>
+        </section>
+    </section>
+    <section class="chapitre chapitre-5" id="/chapitre-5">
+        <header>
+            <h3>5. Design patterns de Code</h3>
+            <nav>
+                <ol>
+                    <li>
+                        <p><a href="#/chapitre-5/partie-1">Objectifs d'un design pattern</a></p>
+                    </li>
+                    <li>
+                        <p><a href="#/chapitre-5/partie-2">Découverte d'un design pattern</a></p>
+                    </li>
+                </ol>
+            </nav>
+        </header>
+        <section class="partie partie-1 chapitre-4-partie-1" id="/chapitre-4/partie-1">
+            <h4>5.1. Objectifs d'un design pattern</h4>
+            <p>En génie logiciel, un <i>design pattern</i> logiciel est une solution réutilisable pour résoudre un problème classique rencontré dans un contexte précis.</p>
+            <p>Les <i>design patterns</i> font partie de ce qu'on appelle les bonnes pratiques du développement logiciel.</p>
+            <p>Les <i>design patterns</i> ne se préoccupent pas de la nature des fonctionnalités qui résultent de leur implémentation. Il visent à décrire une façon de programmer pour atteindre les objectifs suivants :</p>
+            <ul>
+                <li><p>Faciliter la collaboration au sein d'une équipe;</p></li>
+                <li><p>Faciliter la réutilisabilité du code produit;</p></li>
+                <li><p>Faciliter la maintenance du code produit.</p></li>
+            </ul>
+            <p>Dans cette optique, les <i>design patterns</i> peuvent être classés en plusieurs catégories :</p>
+            <ul>
+                <li><p>Les <i>design patterns</i> de <b>création</b> qui s'intéressent à la façon de créer des modules;</p></li>
+                <li><p>Les <i>design patterns</i> de <b>structure</b> qui s'intéressent à l'organisation des différents modules;</p></li>
+                <li><p>Les <i>design patterns</i> de <b>comportement</b> qui s'intéressent à la façon dont les différents modules communiquent entre eux.</p></li>
+            </ul>
+            <p>L'implémentation des <i>design patterns</i> est indépendante du langage utilisé. En d'autres termes, on retrouvent les mêmes <i>design patterns</i> dans tous les langages de programmation.</p>
+            <p>Leur implémentation diffère, bien sûr, en fonction de la syntaxe et des API proposées par le langage.</p>
+        </section>
+        <section class="partie partie-2 chapitre-4-partie-2" id="/chapitre-4/partie-2">
+            <h4>5.2. Découverte des design pattern</h4>
+            <p>Cette partie sera illustrée par les exemples de cours.</p>
+            <p>Cependant, et pour aller plus loin sur les <i>design patterns</i> en JavaScript/ECMAScript, je vous recommande l'excellent <a href="https://www.patterns.dev/posts/classic-design-patterns/">livre de Addy Osmani - Learning JavaScript Design Patterns</a> (<i>gratuit en version numérique</i>) qui est une référence en la matière.</p>
+            <p>Tous les exemples proposés sont illustrés et peuvent être testés à la lecture. Je vous invite vivement à vous y intéresser.</p>
+        </section>
+    </section>
+    <footer>
+        <p>Code : Bonnes pratiques et Outils - Sami Radi - <a target="_blank" href="http://www.virtuoworks.com/"
+                title="VirtuoWorks">VirtuoWorks&reg;</a> - tous droits réservés&copy;</p>
+    </footer>
+</body>
+
+</html>

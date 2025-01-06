@@ -1,0 +1,33 @@
+<header>
+  <div class="site">
+    <div class="title">
+      <a
+        routerLink="/"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        >API REST JSON</a
+      >
+    </div>
+    <app-site-menu />
+  </div>
+
+  <div class="auth">
+    @let authenticated = authService.isAuthenticated();
+
+    <!--  -->
+    @if (authenticated) {
+
+    <!--  -->
+    @let profile = authService.readProfile();
+
+    <p>
+      Bonjour {{ profile?.userName }}<br />
+      <button class="logout" (click)="authService.logout()">déconnexion</button>
+    </p>
+
+    <!--  -->
+    } @else {
+    <p><a routerLink="/login">Connexion</a></p>
+    }
+  </div>
+</header>

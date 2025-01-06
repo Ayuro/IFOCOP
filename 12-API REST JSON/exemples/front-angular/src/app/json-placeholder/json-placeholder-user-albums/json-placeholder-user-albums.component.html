@@ -1,0 +1,35 @@
+@if ( albums$ | async; as albums ) {
+
+<!--  -->
+
+<ul>
+  @for (album of albums; track album.id) {
+
+  <li>
+    <a routerLink="/json-placeholder/albums/{{ album.id }}">{{
+      album.title
+    }}</a>
+  </li>
+
+  }
+</ul>
+
+<!--  -->
+
+} @else {
+
+<!--  -->
+
+@if(loading) {
+<div>
+  <app-loading [message]="'Chargement...'" />
+</div>
+}
+<!--  -->
+
+@if(error) {
+<div>{{ error }}</div>
+}
+
+<!--  -->
+}

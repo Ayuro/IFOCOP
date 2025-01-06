@@ -1,0 +1,5 @@
+<div class="grid">
+  @for(element of elements; track element.number) {
+  <app-atomic-element (picked)="onPick($event)" [atomicElement]="element"></app-atomic-element>
+  }
+</div>

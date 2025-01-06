@@ -1,0 +1,22 @@
+div {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  span {
+    opacity: 1;
+    letter-spacing: 1px;
+    color: var(--clr-primary);
+    animation: fade-in-out 2s infinite;
+  }
+}
+
+@keyframes fade-in-out {
+  0%,
+  100% {
+    opacity: 0.66;
+  }
+  50% {
+    opacity: 1;
+  }
+}

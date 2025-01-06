@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>jQuery : Exercice 14</title>
+		<script src="../../jquery.js"></script>
+		<script>
+      /*********************************
+      ***********PRESENTATION***********
+      **********************************
+        Il est possible avec jQuery d'intercepter l'usage des touches de clavier :
+        keypress() : appui et maintien sur la touche du clavier
+        keyup() : appui sur la touche du clavier
+        keydown() : relâchement d'une touche du clavier
+
+        Par exemple :
+        $('div').keypress(function(evenement){
+          console.log(evenement.which).
+        });
+
+        La valeur de la touche enfoncée est renvoyé ici (dans le cas de keyup et keydown, il s'agit du code ASCII de la touche).
+
+      */
+
+      /**********************************
+      *************EXERCICES*************
+      ***********************************
+        Créez une page vide contenant un petit bloc coloré.
+        À la fin du chargement du document, prévoyez le script suivant :
+        a) Dirigez le bloc dans la page avec les touches fléchées.
+        b) Le bloc change de couleur durant le mouvement.
+
+        N.B. : les ascenseurs de la fenêtre ne doivent pas bouger (utilisez evenement.preventDefault()).
+
+        Utilisez les méthodes keyup(), keydown() et css().
+
+      */
+	  function canal() {
+		return Math.round(Math.random() * 255)
+	  };
+
+	  function transparence() {
+		let valeurTransparence = 0;
+		while (valeurTransparence < 0.5) {
+			valeurTransparence = Math.round(Math.random()*100)/100;
+		}
+		return valeurTransparence;
+	  }
+
+	  function deplacement(axe,sens) {
+		let $div = $('div');
+		$div
+			.css(axe,parseFloat($div.css(axe)) + sens)
+			.css('background',`rgba(${canal()},${canal()},${canal()},${transparence()})`);
+	  };
+
+	  $(function() {
+		$(window).on('keydown',function(event) {
+
+
+			switch (event.which) {
+				// flèche vers le haut : 38
+				case 38 :
+					deplacement('top',-5);
+					break;
+				// flèche vers le bas : 40
+				case 40 :
+					deplacement('top',5);
+					break;
+			// flèche vers la droite : 39
+				case 39 :
+					deplacement('left',5);
+					break;
+			// flèche vers la gauche : 37
+				case 37 :
+					deplacement('left',-5);
+					break;
+			}
+		});
+	  });
+		</script>
+		<style>
+			div {
+				width: 5rem;
+				height: 5rem;
+				background: crimson;
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+	</body>
+</html>

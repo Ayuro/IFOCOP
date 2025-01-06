@@ -1,0 +1,8 @@
+extends ../layouts/layout.pug
+block css
+  link(rel="stylesheet", href="/style/404.css")
+block content
+  h1 Erreur 404
+  h3 Ressource introuvable à cette URL
+  button(type="button")
+    a(href= backlink) Retour accueil

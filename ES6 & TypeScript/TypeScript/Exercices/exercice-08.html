@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>TypeScript : Exercice 8</title>
+			<!---------------------------------
+			-----------PRÉSENTATION-----------
+			----------------------------------
+
+				----------------------------------
+				  Principe de base des fonctions
+				----------------------------------
+
+				On utilise, tout comme en JavaScript, des fonctions nommées et des fonctions anonymes.
+				Bien entendu, nous allons utiliser le type pour chaque argument.
+
+				===code_ts===============================================
+					const addition = (a:number ,b:number) => {
+						console.log(a + b);
+					};
+
+					addition(15,25);
+				=========================================================
+
+				--------------------
+				  Valeur de retour
+				--------------------
+
+				Pour la valeur retournée, on précise aussi le type.
+				Si la valeur retournée peut être de plusieurs types, on utilise any (tout).
+				S'il n'y a pas de valeur retournée, on peut utiliser avoid (vide).
+				
+				===code_ts===============================================
+					const multiplication = (a:number, b:number):number => {
+						return a * b;
+					};
+
+					alert(multiplication(15,25));
+
+					const test = (a:number, b:number):any => {
+						const resultat = a - b;
+						if (resultat > 0) {
+							return resultat;
+						} else {
+							return false:
+						}
+					};
+
+					alert(test(15,25));
+
+					const addition = (a:number, b:number):avoid => {
+						console.log(a + b);
+					};
+
+					addition(15,25);
+				=========================================================
+				
+
+			----------------------------------
+			-------------EXERCICE-------------
+			----------------------------------
+
+				Voici le code JavaScript suivant :
+				===code_js===============================================
+				var doubler = function(valeur) {
+				return valeur * 2;
+				};
+				console.log(doubler(5));
+
+				var direBonjour = function(nom) {
+					if (nom === undefined) {
+					nom = 'Bart Simpson';
+					}
+					console.log(`Bonjour ${nom}`);
+				};
+				direBonjour('Marc');
+				direBonjour();
+				=========================================================
+				- Créez un document TypeScript dans lequel vous copiez le code ci-dessus.
+				- Adaptez le code pour respecter les déclarations de variables et de types.
+			-->
+	</head>
+	<body>
+		<h1>TypeScript : Exercice 8</h1>
+        <p>Un paragraphe</p>
+		<noscript>
+			<p>Veuillez activer JavaScript</p>
+		</noscript>
+		<script src="dist/exercice-08.js"></script>
+	</body>
+</html>

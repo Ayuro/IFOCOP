@@ -1,0 +1,13 @@
+:host {
+  display: block;
+  margin-top: 2rem;
+  padding: 2rem;
+  background: var(--clr-primary);
+  color: #fff;
+}
+
+a:link,
+a:visited {
+  color: #fff;
+  text-decoration: underline;
+}

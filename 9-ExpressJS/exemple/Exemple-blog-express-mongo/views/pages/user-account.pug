@@ -1,0 +1,10 @@
+extends ../layouts/layout.pug
+block content
+  if firstname && lastname
+    h3 Bonjour #{firstname} #{lastname}
+  else
+    h3 Bonjour anonyme
+  p Bienvenue sur votre page de profil
+
+  //- EXERCICE 2 : Mettre à jour cette page afin qu'elle reprenne les informations de l'utilisateur dans un formulaire pour pouvoir les modifier.
+  //- EXERCICE 4 : Mettre à jour cette page pour qu'elle affiche la liste des posts publiés par l'utilisateur (de préférence avec une pagination).

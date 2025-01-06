@@ -1,0 +1,73 @@
+@if (restaurant$ | async; as restaurant) { @if (restaurant.data) {
+<article>
+  <h2>{{ restaurant.data.name }}</h2>
+  <p>
+    Cuisine : <strong>{{ restaurant.data.cuisine }}</strong> &middot; Quartier :
+    <strong>{{ restaurant.data.borough }}</strong>
+  </p>
+
+  <div class="grid">
+    <div>
+      <h3>Adresse</h3>
+
+      <address>
+        {{ restaurant.data.address.building }}<br />
+        {{ restaurant.data.address.street }},<br />
+        {{ restaurant.data.address.zipcode }}
+      </address>
+    </div>
+    <div>
+      <h3>Coordonnées</h3>
+      <p>
+        long : {{ restaurant.data.address.coord[0] }}<br />lat :
+        {{ restaurant.data.address.coord[1] }}
+      </p>
+      <p>
+        <a
+          href="https://www.google.com/maps/place/{{
+            restaurant.data.address.coord[1]
+          }}+{{ restaurant.data.address.coord[0] }}"
+          target="_blank"
+        >
+          Voir sur Google Maps
+        </a>
+      </p>
+    </div>
+    <div>
+      <h3>Notes ({{ restaurant.data.grades.length }})</h3>
+
+      <ul>
+        @for (grade of restaurant.data.grades; track grade) {
+        <li>
+          <p>
+            {{ grade.score }} (<strong>{{ grade.grade }}</strong
+            >) &middot;
+            {{ grade.date | date }}
+          </p>
+        </li>
+        }
+      </ul>
+    </div>
+  </div>
+</article>
+}
+
+<!--  -->
+
+} @else {
+
+<!--  -->
+
+@if (loading$ | async) {
+<app-loading />
+}
+
+<!--  -->
+
+@if (error$ | async; as error) {
+<app-error-message [message]="error"></app-error-message>
+}
+
+<!--  -->
+
+}

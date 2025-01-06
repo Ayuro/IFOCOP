@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05 - VuesJS - Première utilisation de ref</title>
+</head>
+<body>
+    <div id="app">
+      <h1>{{ title }}</h1>
+      <input
+        type="text"
+        name="saisie"
+        id="saisie"
+        v-model="textInput"
+        >
+      <p>{{ displayText }}</p>  
+    </div>    
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./script-05.js"></script>
+</body>
+</html>

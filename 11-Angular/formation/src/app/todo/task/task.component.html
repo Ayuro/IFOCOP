@@ -1,0 +1,4 @@
+<label [ngClass]="{completed: task.done}">
+  <input type="checkbox" [(ngModel)]="task.done" (change)="todoService.updateTaskState(task)" />
+  <h2>{{ task.title }}</h2>
+</label>

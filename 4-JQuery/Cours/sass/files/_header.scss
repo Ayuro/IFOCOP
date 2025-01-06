@@ -1,0 +1,40 @@
+/***********Haut de la page***********/
+
+.header {
+    position: fixed;
+    right: 0;
+    top: -80vh;
+    z-index: 10;
+    border-radius: 0 0 0 .8rem;
+    background-color: white;
+    width: 15rem;
+    height: 80vh;
+
+    a {
+      text-decoration: none;
+    }
+
+    &__title {
+      margin: 2% 0;
+      padding: 3% 0;
+      text-align: center;
+      font-size: 2em;
+      line-height: 1em;
+      color: $color-virtuoworks;
+    }
+
+    &__bottom {
+      flex-direction: column;
+      display: flex;
+      align-items: center;
+    }
+
+  @media screen and (min-width: $media-low-desktop){
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 12.5rem;
+    border-radius: 0 0 .8rem 0;
+    height: auto;
+  }
+}

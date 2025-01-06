@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04 - VuesJS - Boucles - Tableau d'objets</title>
+</head>
+<body>
+    <h1>04 - VuesJS - Boucles - Tableau d'objets</h1>
+    <div id="app">
+        <ul>
+            <li v-for="oneElement in listOfObjects" :style="{ backgroundColor: oneElement.color}">
+                {{ oneElement.name }}
+            </li>
+        </ul>
+    </div>    
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./script-04.js"></script>
+</body>
+</html>

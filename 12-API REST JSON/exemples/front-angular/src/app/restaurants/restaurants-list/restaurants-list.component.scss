@@ -1,0 +1,48 @@
+:host {
+  display: grid;
+  min-height: 100%;
+  grid-template-rows: min-content 1fr;
+}
+
+app-pagination {
+  display: block;
+  margin: 2rem 0 4rem;
+}
+
+.content {
+  min-height: 800px;
+}
+
+.loading {
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 1.25rem;
+}
+
+p {
+  margin: 0;
+}
+
+p.title {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+p.details {
+  color: #666;
+
+  span {
+    color: var(--clr-primary);
+  }
+}

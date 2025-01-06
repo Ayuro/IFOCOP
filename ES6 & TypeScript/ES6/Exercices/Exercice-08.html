@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>JavaScript : Exercice 8</title>
+		<script>
+			/*********************************
+			***********PRESENTATION***********
+			**********************************
+				ES6 permet de définir des valeurs par défaut pour les arguments des fonctions. En d'autres termes, si un argument n'est pas définit à l'exécution, il prendra pour valeur la valeur fournie lors de la déclaration de la fonction 
+		
+				ES6----------------------------------------------------------
+				let addition = function(nombre1 = 50, nombre2 = 50) {
+					return nombre1 + nombre2;
+				}
+
+				addition(); // retourne 100
+				addition(8); // retourne 58
+				addition(8,2); // retourne 10
+				addition(undefined, 12); // retourne 72
+				-------------------------------------------------------------
+
+				ES5----------------------------------------------------------
+				var addition = function(nombre1, nombre2) {
+					nombre1 = 50 || nombre1;
+					nombre2 = 50 || nombre2;
+					return nombre1 + nombre2;
+				}
+      		*/
+
+				
+
+			/*********************************
+			*************EXERCICE*************
+			**********************************
+				Créez une fonction qui accepte trois arguments : hauteur, largeur et couleur.
+				Ces trois arguments permettent de créer un rectangle qui s'affichera dans le navigateur comme dernier enfant du body.
+				S'il manque des informations, vous donnerez les valeurs suivantes :
+				- hauteur : 100px
+				- largeur : égale à la hauteur (c'est à dire que dans le cas où seule la largeur est fournie, un carré s'affichera)
+				- couleur : bleue 
+			*/
+			
+		</script>
+	</head>
+	<body>
+		<h1>Mon nouveau document</h1>
+		<p>Premier paragraphe</p>
+		<p>Deuxième paragraphe</p>
+		<noscript>
+			<p>Veuillez activer JavaScript</p>
+		</noscript>
+	</body>
+</html>

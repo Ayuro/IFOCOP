@@ -1,0 +1,39 @@
+@if (totalPages > 1) {
+<nav aria-label="Page navigation">
+  <ul class="pagination">
+    <li class="page-item" [class.disabled]="currentPage === 1">
+      <button
+        class="page-link"
+        (click)="onPageChange(currentPage - 1)"
+        aria-label="Page précédente"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            fill="currentColor"
+            d="M18.41,7.41L17,6L11,12L17,18L18.41,16.59L13.83,12L18.41,7.41M12.41,7.41L11,6L5,12L11,18L12.41,16.59L7.83,12L12.41,7.41Z"
+          />
+        </svg>
+      </button>
+    </li>
+    @for(page of pages; track page) {
+    <li class="page-item" [class.active]="page === currentPage">
+      <button (click)="onPageChange(page)">{{ page }}</button>
+    </li>
+    }
+    <li class="page-item" [class.disabled]="currentPage === totalPages">
+      <button
+        class="page-link"
+        (click)="onPageChange(currentPage + 1)"
+        aria-label="Page suivante"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            fill="currentColor"
+            d="M5.59,7.41L7,6L13,12L7,18L5.59,16.59L10.17,12L5.59,7.41M11.59,7.41L13,6L19,12L13,18L11.59,16.59L16.17,12L11.59,7.41Z"
+          />
+        </svg>
+      </button>
+    </li>
+  </ul>
+</nav>
+}

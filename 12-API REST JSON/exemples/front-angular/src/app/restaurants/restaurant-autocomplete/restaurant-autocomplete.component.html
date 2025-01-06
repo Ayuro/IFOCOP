@@ -1,0 +1,58 @@
+<h2>Rechercher un restaurant</h2>
+
+<!--  -->
+
+@let suggestions = suggestions$ | async;
+
+<!--  -->
+
+<div class="wrapper">
+  <div class="search">
+    <input
+      appUpDownKeys
+      type="text"
+      placeholder="Saisissez un nom..."
+      [formControl]="q"
+      (focus)="inputFocused = true"
+      (blur)="inputFocused = false"
+      #searchInput
+    />
+    @if (suggestions?.loading) {
+    <span>
+      <app-spinner />
+    </span>
+    }
+  </div>
+
+  @if (suggestions) {
+
+  <!--  -->
+
+  @if (suggestions.data?.length && (!closed || inputFocused)) {
+  <ul (appClickOutside)="closeList()">
+    <!--  -->
+    @for( suggestion of suggestions.data; track suggestion; let i = $index) {
+    <li>
+      <a routerLink="/restaurants/restaurant/{{ suggestion.restaurant_id }}">
+        {{ suggestion.name }} -
+        <em>{{ suggestion.cuisine }}</em>
+      </a>
+    </li>
+    }
+  </ul>
+  }
+
+  <!--  -->
+
+  @if (!suggestions.data?.length && !suggestions.loading && !suggestions.error)
+  {
+  <p><em>Aucun résultat</em></p>
+  }
+  <!--  -->
+
+  }
+</div>
+
+@if (suggestions?.error) {
+<app-error-message message="Impossible de récupérer les suggestions" />
+}

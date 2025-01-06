@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>JavaScript : Exercice 17</title>
+		<script>
+			/*********************************
+			***********PRESENTATION***********
+			**********************************
+				Les classes ES6 offrent également la possibilité de définir des méthodes et propriétés dites statiques avec le mot-clé `static`. Les méthodes et propriétés statiques ont la particularité d'être indépendantes de toute instance et d'être directement accessibles depuis la classe.
+
+				En ES5 elles équivalent à des méthodes définies directement sur la fonction constructeur (et non sur sa propriété `.prototype`).
+
+				Exemple de classe :
+
+				ES6------------------------------------------------------------------------------------
+				class Point {
+					// Constructeur de la classe
+					constructor(x, y) {
+					this.x = x;
+					this.y = y;
+					}
+
+					// Méthode statique
+					static additionner(point1, point2) {
+					return new Point(point1.x + point2.x, point1.y + point2.y);
+					}
+				}
+
+				const A = new Point(1, 2);
+				const B = new Point(3, 4);
+				const C = Point.additionner(A, B); // appel d'une méthode statique de la classe Point
+				C.x; // 4
+				C.y; // 6
+				---------------------------------------------------------------------------------------
+
+				Code équivalent en ES5 :
+				ES5------------------------------------------------------------------------------------
+				"use strict";
+				var Point = (function () {
+					// Constructeur de la classe
+					function Point(x, y) {
+					this.x = x;
+					this.y = y;
+					}
+
+					// Méthode statique
+					Point.additionner = function (point1, point2) {
+					return new Point(point1.x + point2.x, point1.y + point2.y);
+					};
+
+					return Point;
+				}());
+
+				var A = new Point(1, 2);
+				var B = new Point(3, 4);
+				var C = Point.additionner(A, B);
+				C.x; // 4
+				C.y; // 6
+				---------------------------------------------------------------------------------------
+			*/
+
+			/*********************************
+			*************EXERCICE*************
+			**********************************
+			** 1 **
+				Reprenez le code de l'exercice précédent.
+
+				Ajouter une méthode statique `intersection` à la classe Rectangle.
+				Cette méthode prendra en argument 2 rectangles et renverra au choix :
+				- un nouveau rectangle correspondant à l'intersection des deux rectangles fournis
+				- `null` si les deux rectangles ne se chevauchent pas.
+
+				Pour déterminer si deux rectangles se coupent il suffit de tester si :
+				r1.droite > r2.gauche &&
+				r1.gauche < r2.droite &&
+				r1.bas > r2.haut &&
+				r1.haut < r2.bas
+
+				Pour déterminer les coordonnées du rectangle à l'intersection de r1 et
+				r2 on pourra s'aider des formules :
+				x = Math.max(r1.gauche, r2.gauche);
+				y = Math.max(r1.haut, r2.haut);
+				width = Math.min(r1.droite, r2.droite) - x;
+				height = Math.min(r1.bas, r2.bas) - y;
+
+				Créer 2 rectangles r1 et r2 avec les coordonnées de votre choix. Assurez-vous que r1 et r2 se chevauchent.
+			*/	
+
+			/*
+			** 2 **
+				Créez un troisième rectangle r3 qui sera le résultat de l'intersection des rectangles r1 et r2. 
+			*/	
+
+			/*	
+			** 3 **
+				Déplacer r1 et r2 de manière à ce qu'ils ne se chevauchent plus.
+				Créez un rectangle r4 qui sera l'intersection des rectangles r1 et r2.
+				Vérifiez dans la console que r4 vaut bien `null`.
+			*/
+
+		</script>
+	</head>
+	<body>
+		<h1>Mon nouveau document</h1>
+		<p>Premier paragraphe</p>
+		<p>Deuxième paragraphe</p>
+		<noscript>
+			<p>Veuillez activer JavaScript</p>
+		</noscript>
+	</body>
+</html>

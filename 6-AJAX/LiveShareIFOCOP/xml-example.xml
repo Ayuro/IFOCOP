@@ -1,0 +1,11 @@
+<student>
+  <firstname>David</firstname>
+  <lastname>Martins</lastname>
+  <isAdmin>false</isAdmin>
+  <address>
+    <zipCode>75005</zipCode>
+    <city>Paris</city>
+    <street>Rue de la Richesse</street>
+    <number>42</number>
+  </address>
+</student>

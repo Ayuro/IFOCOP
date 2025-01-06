@@ -1,0 +1,11 @@
+extends ../layouts/layout.pug
+block content
+  form#posts-form
+    label#title Titre 
+    input#title(type="text", name="title")
+    label#body Votre message
+    input#body(type="text", name="body")
+    button(type="submit") Envoyer
+  div#notification
+    p#notificationMessage
+  script(src="/script/post.js")

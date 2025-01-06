@@ -1,0 +1,39 @@
+<img
+  src="https://www.fisheries.noaa.gov/s3/styles/full_width/s3/dam-migration/hawksbill_sea_turtle.jpg"
+  alt="Tortue de mer"
+/>
+
+@if(afficher) {
+<app-clock></app-clock>
+}
+<button (click)="afficher = !afficher">Afficher / Masquer</button>
+
+<button (click)="basculer($event)">Afficher / Masquer</button>
+
+@if(afficher) {
+<p>
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque reprehenderit
+  delectus, voluptatem illum aperiam rem quam maiores dolorem qui nobis iusto
+  nulla sequi excepturi nostrum similique! Maxime eius ea aliquam.
+</p>
+}
+
+<p
+  [ngClass]="{
+    big: isBig,
+    important: isBig
+  }"
+>
+  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+</p>
+
+<p
+  [ngClass]="{
+    big: isImportant,
+    important: isBig
+  }"
+>
+  excepturi veniam veritatis doloremque? Laudantium, distinctio.
+</p>
+
+<button (click)="toggleImportant()">important</button>

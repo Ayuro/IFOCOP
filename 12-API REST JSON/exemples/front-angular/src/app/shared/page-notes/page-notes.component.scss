@@ -1,0 +1,43 @@
+details[open] summary {
+  border-radius: 5px 5px 0 0;
+}
+
+details {
+  margin: 4rem 0 1rem;
+  border-radius: 5px;
+}
+
+details[open] > summary::after {
+  transform: rotate(180deg);
+}
+
+summary {
+  background-color: #eeebdc;
+  list-style: none;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 2rem;
+  font-weight: bold;
+  border-radius: 5px;
+  user-select: none;
+
+  &::-webkit-details-marker {
+    display: none;
+  }
+
+  &::after {
+    content: "";
+    width: 24px;
+    height: 24px;
+    background: url("/icons/chevron-down.svg") no-repeat;
+    background-size: cover;
+    margin-left: 0.75em;
+    transition: 0.2s;
+  }
+}
+
+aside {
+  margin: 0 0 2rem;
+  padding: 1.5rem 2rem;
+  background: var(--clr-primary-light-bg);
+}

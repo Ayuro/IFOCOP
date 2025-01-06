@@ -1,0 +1,37 @@
+@if (this.activeUserService.activeUser; as user) {
+<div class="profile-grid">
+  <div>
+    <h3>E-mail</h3>
+    <p>{{ user.email }}</p>
+
+    <h3>Téléphone</h3>
+    <p>{{ user.phone }}</p>
+
+    <h3>Site Web</h3>
+    <p>{{ user.website }}</p>
+  </div>
+  <div>
+    <h3>Adresse</h3>
+
+    <address>
+      {{ user.address.street }}<br />
+      {{ user.address.suite }}<br />
+      {{ user.address.city }}<br />
+      {{ user.address.zipcode }}
+    </address>
+  </div>
+
+  <div>
+    <h3>Société</h3>
+
+    <p>
+      {{ user.company.name }}<br />
+      <em>{{ user.company.catchPhrase }}</em
+      ><br />
+      <strong>
+        <em>{{ user.company.bs }}</em></strong
+      >
+    </p>
+  </div>
+</div>
+}

@@ -1,0 +1,15 @@
+meta {
+  name: API Bearer
+  type: http
+  seq: 4
+}
+
+get {
+  url: http://localhost:1986/create-user
+  body: none
+  auth: none
+}
+
+headers {
+  auth: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6InRvdG8iLCJlbWFpbCI6ImFAYSIsImlhdCI6MTcyNjA2MDAxM30.tl2VRjldfop9vfZmJ5iRLtOdH3Rm_uoW6WgWt2F0rSU
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>TypeScript : Exercice 11</title>
+			<!---------------------------------
+			-----------PRÉSENTATION-----------
+			----------------------------------
+
+				------------
+					Principe
+				------------
+
+				Fréquemment, en programmation, nous sommes amenés à utiliser des éléments ayant la même structuration. Si nous appliquons ce principe au TypeScript, cela va nous conduire à déclarer plusieurs variables avec le même typage.
+				Pour éviter des répétitions inutiles, les interfaces vont nous permettre de réaliser un schéma type pour chaque besoin et d'applique ce schéma à tous les éléments ayant les mêmes caractéristiques.
+
+				-----------------
+				  Mise en œuvre
+				-----------------
+
+				Nous déclarons tous d'abord le schéma. Ici, il s'agit d'un objet. Vous remarquerez que chaque propriété, dans le schéma, se termine par un point virgule :
+
+				===code_ts===============================================
+					interface Identite {
+						nom: string;
+						pays: string;
+						age: number;
+					}
+				=========================================================
+
+				Nous pouvons ensuite utiliser ce schéma pour déclarer le typage d'un objet ou d'un argument d'une fonction :
+
+				===code_ts===============================================
+					const user1: Identite = {
+						nom: 'Pierre',
+						pays: 'France',
+						age: 21
+					};
+
+					function bonjour(personne: Identite) {
+						console.log(`${personne.nom} a ${personne.age} ans et vie en ${personne.pays}`);
+
+					}
+
+					bonjour(user1);
+				=========================================================
+				
+			----------------------------------
+			-------------EXERCICE-------------
+			----------------------------------
+
+			-------
+			-- 1 --
+			-------
+				- Nous allons créer un fiche type pour des films. Chaque film comportera les informations suivantes :
+					- titre (texte)
+					- réalisateur (texte)
+					- année de tournage (nombre)
+				- À l'aide des interfaces, créez deux fiches de film
+
+			-------
+			-- 2 --
+			-------
+				
+				- Ajoutez à l'interface le(s) genre(s) de chaque film (attention, il peut y avoir un comme plusieurs genres).
+            
+			-------
+			-- 3 --
+			-------
+
+				- Créez une fonction qui prendra comme argument une fiche de film et retournera la phrase suivante : « TITRE_DE_FILM a été réalisé par RÉALISATEUR en ANNÉE. Il est de genre(s) : GENRES ».
+				- Utilisez la fonction avec les deux fiches de film.
+
+			-->
+	</head>
+	<body>
+		<h1>TypeScript : Exercice 11</h1>
+        <p>Un paragraphe</p>
+		<noscript>
+			<p>Veuillez activer JavaScript</p>
+		</noscript>
+	</body>
+</html>

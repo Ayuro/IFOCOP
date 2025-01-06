@@ -1,0 +1,75 @@
+.nav {
+  text-align: center;
+  border-top: $color-virtuoworks 2px solid;
+  border-bottom: $color-virtuoworks 2px solid;
+  padding: 3% 0;
+
+  &__content {
+    padding: 0;
+  }
+
+  &__element {
+    padding: 0;
+    margin: .5rem .3rem;
+    display: inline-block;
+    list-style-type: none;
+
+    &:hover {
+      background-color: $color-virtuoworks-light;
+
+      .nav__link {
+        color: $color-virtuoworks;
+      }
+    }
+  }
+
+  &__link {
+    color: white;
+    font-weight: bold;
+  }
+
+  &__element,
+  &__change-action {
+    background-color: $color-virtuoworks;
+    border-radius: 0.8rem;
+    padding: 0.3rem 0.5rem;
+  }
+
+  &__change-action {
+    background: $orange;
+    color: white;
+    font-size: 1.3rem;
+    cursor: pointer;
+    display: inline-block;
+    margin: 10px 0;
+    width: inherit;
+    border: none;
+
+    &:hover {
+      background-color: #fbdccd;
+      color: $orange;
+    }
+  }
+
+  &__button {
+    display: block;
+    position: absolute;
+    bottom: -2rem;
+    width: 2rem;
+    height: 2rem;
+    line-height: 2rem;
+    font-size: 1.8rem;
+    color: $color-virtuoworks;
+    background-color: white;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 0 0 0 0.4rem;
+    right: 0;
+  }
+
+  @media screen and (min-width: $media-low-desktop){
+    &__button {
+      display: none;
+    }
+  }
+}

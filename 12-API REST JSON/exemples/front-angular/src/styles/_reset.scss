@@ -1,0 +1,32 @@
+// Simplifie les calculs de largeur et de dimensions des éléments
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  // Supprime les espacements par défaut
+  margin: 0;
+  padding: 0;
+
+  // Oblige à spécifier la police explicitement, plutôt que de laisser l'Agent Utilisateur les définir sur certains éléments
+  font: inherit;
+}
+
+html {
+  color-scheme: dark light;
+  height: 100%;
+}
+
+body {
+  min-height: 100vh;
+}
+
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}

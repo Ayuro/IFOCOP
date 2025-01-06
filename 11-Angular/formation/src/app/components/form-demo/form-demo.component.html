@@ -1,0 +1,38 @@
+<p>value {{ form.value | json }}</p>
+<p>valid : {{ form.valid }}</p>
+<p>valid : {{ form.valid }} / invalid : {{ form.invalid }}</p>
+<p>touched : {{ form.touched }} / untouched : {{ form.untouched }}</p>
+<p>dirty : {{ form.dirty }} / pristine : {{ form.pristine }}</p>
+
+<form [formGroup]="form" (ngSubmit)="envoyerLesDonnees()">
+  <div class="form-control">
+    <label
+      >Username<br />
+      <input
+        type="text"
+        formControlName="userName"
+        placeholder="Votre nom..."
+      />
+    </label>
+    @if(userName.touched && userName.errors) {
+      @if(userName.touched &&
+    userName.errors['required']) {
+    <p>Vous devez saisir un nom d'utilisateur</p>
+    } @if(userName.touched && userName.errors['minlength']) {
+
+    <p>Votre nom d'utilisateur doit comporter au moins 4 caractères</p>
+    } }
+  </div>
+
+  <div class="form-control">
+    <label>
+      E-mail<br />
+      <input type="text" formControlName="email" placeholder="Email..." />
+    </label>
+    @if(email.touched && email.errors) {
+    <p>Vous devez saisir une adresse e-mail valide</p>
+    }
+  </div>
+  <button [disabled]="form.invalid">Envoyer</button>
+  <!-- <input type="submit" value="submit input"> -->
+</form>

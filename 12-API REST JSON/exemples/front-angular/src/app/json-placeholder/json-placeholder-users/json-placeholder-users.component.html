@@ -1,0 +1,32 @@
+<h2>Utilisateurs</h2>
+
+@if( users$ | async; as users ) {
+
+<ul>
+  @for(user of users; track user.id) {
+  <li>
+    <a routerLink="/json-placeholder/users/{{ user.id }}">{{ user.name }}</a>
+  </li>
+  }
+</ul>
+
+} @if(loading) {
+
+<div>
+  <app-loading [message]="'Chargement...'" />
+</div>
+}
+
+<!--  -->
+
+@if(error) {
+<div>{{ error }}</div>
+}
+
+<app-page-notes>
+  <p>
+    Cette page utilise un seul Observable avec une gestion de chargement et une
+    gestion d’erreur.
+  </p>
+  <p>C’est le cas le plus simple de la section JSONPlaceholder.</p>
+</app-page-notes>

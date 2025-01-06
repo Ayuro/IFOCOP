@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>TypeScript : Exercice 7</title>
+			<!---------------------------------
+			-----------PRÉSENTATION-----------
+			----------------------------------
+
+				--------------------
+				  Principe de base
+				--------------------
+
+				Comme en JavaScript, les objets sont constitués de paires clef-valeur.
+				On précise directement ce que contient l'objet comme nom de propriété et comme type de données :
+
+				===code_ts===============================================
+					let fiche: { essence: string, taille: number } = {
+						essence: 'chêne feuillu',
+						taille: 12
+					};
+				=========================================================
+
+				-------------------------
+				  Tableau dans un objet
+				-------------------------
+				On peut, bien sûr, placer des tableaux ce qui nous donne :
+
+				===code_ts============================================================
+					let fiche: { essence: string, taille: number, caracteristiques: string[] } = {
+						essence: 'chêne feuillu',
+						taille: 12,
+						caracteristiques: ['vert','europe','sempervirent']
+					};
+				======================================================================
+
+			----------------------------------
+			-------------EXERCICE-------------
+			----------------------------------
+			
+				- Créez un objet contenant cinq propriétés :
+					- deux chaîne de caractères
+					- un nombre
+					- deux tableaux (l'un, rempli, contenant des texte ; l'autre, vide, qui contiendra des nombres)
+				- Affichez le tableau dans la console
+				- Ajoutez des données dans le tableau vide
+				- Faites la sommes de tous les nombres de l'objet et affichez le résultat dans la console (utilisez une boucle pour le tableau).
+			-->
+	</head>
+	<body>
+		<h1>TypeScript : Exercice 7</h1>
+        <p>Un paragraphe</p>
+		<noscript>
+			<p>Veuillez activer JavaScript</p>
+		</noscript>
+		<script src="dist/exercice-07.js"></script>
+	</body>
+</html>

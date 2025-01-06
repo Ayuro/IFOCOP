@@ -1,0 +1,63 @@
+<h2>Liste des restaurants</h2>
+
+@let restaurants = paginatedRestaurants$ | async;
+
+<!--  -->
+
+<app-pagination
+  [currentPage]="currentPage"
+  [totalResults]="total"
+  [resultsPerPage]="rpp"
+  (pageChange)="onPageChange($event)"
+></app-pagination>
+
+<div class="content">
+  <!--  -->
+
+  @if (restaurants?.error) {
+  <app-error-message
+    message="Impossible de récupérer les restaurants"
+  ></app-error-message>
+  }
+
+  <!--  -->
+
+  @if (restaurants?.loading) {
+  <div class="loading">
+    <app-loading />
+  </div>
+  }
+
+  <!--  -->
+
+  @if (!restaurants?.loading && restaurants?.data?.results; as restaurantsList)
+  {
+
+  <ul>
+    @for (restaurant of restaurantsList; track restaurant.restaurant_id) {
+    <li>
+      <p class="title">
+        <a
+          routerLink="/restaurants/restaurant/{{ restaurant.restaurant_id }}"
+          >{{ restaurant.name }}</a
+        >
+      </p>
+      <p class="details">
+        Cuisine&nbsp;: <span>{{ restaurant.cuisine }}</span>
+        &middot; Quartier&nbsp;:
+        <span>{{ restaurant.borough }}</span>
+      </p>
+    </li>
+    }
+  </ul>
+
+  } @else if (!restaurants?.loading) {
+
+  <!--  -->
+
+  <p>Aucun restaurant</p>
+
+  <!--  -->
+
+  }
+</div>

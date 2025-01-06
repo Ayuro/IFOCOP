@@ -1,0 +1,60 @@
+@if( albumData$ | async; as albumData ) {
+
+<h2>
+  <small>Album photo</small>
+  <br />
+  {{ albumData.album.title }}
+</h2>
+
+<p class="author">
+  par : <strong>{{ albumData.user.name }}</strong>
+</p>
+
+<div class="photo-grid">
+  @for(photo of albumData.photos; track photo.id) {
+
+  <!--  -->
+  <div title="{{ photo.title }}">
+    @defer (on viewport){
+    <div>
+      <img
+        [src]="photo.thumbnailUrl"
+        width="150"
+        height="150"
+        alt="{{ photo.title }}"
+      />
+    </div>
+    <p class="photo-title">{{ photo.title }}</p>
+
+    } @placeholder (minimum 500ms) {
+    <div><app-spinner /></div>
+    } @loading (after 100ms; minimum 10s) {
+    <div><app-spinner /></div>
+    } @error {
+    <p>Erreur</p>
+    }
+  </div>
+
+  <!--  -->
+  }
+</div>
+
+<!--  -->
+
+} @else {
+
+<!--  -->
+
+@if(loading) {
+<div>
+  <app-loading [message]="'Chargement...'" />
+</div>
+}
+<!--  -->
+
+@if(error) {
+<div>{{ error }}</div>
+}
+
+<!--  -->
+}

@@ -1,0 +1,179 @@
+<article class="text-container">
+  <h1>API REST</h1>
+
+  <h2>Définitions</h2>
+
+  <h3>API</h3>
+
+  <p>
+    Une
+    <a
+      target="_blank"
+      href="https://developer.mozilla.org/en-US/docs/Glossary/API"
+      >API</a
+    >
+    (<strong><em>Application Programming Interface</em></strong
+    >) est un ensemble de fonctionnalités et de règles existant dans un logiciel
+    permettant d’interagir avec celui-ci de manière automatisée (plutôt que de
+    passer par une interface utilisateur). L’API peut être vue comme un contrat
+    passé entre le logiciel qui la propose et d’autres entités, telles que des
+    logiciels ou matériels tiers.
+  </p>
+
+  <p>
+    Dans une classe ou un objet JavaScript, les méthodes et les propriétés
+    publiques peuvent être considérées comme une API, car elles exposent des
+    fonctionnalités qui peuvent être utilisées par d’autres parties de
+    l’application, ou importées dans d’autres programmes.
+  </p>
+
+  <p>
+    Dans le cas d’un service web, une API est un ensemble de règles et de
+    spécifications qui permettent à des logiciels de communiquer entre eux.
+  </p>
+
+  <p>
+    Les API web permettent à des applications de communiquer entre elles,
+    indépendamment de leur langage de programmation.
+  </p>
+
+  <p>
+    API n’est pas une technologie, mais un concept. Il existe de nombreux types
+    d’API, tels que :
+  </p>
+
+  <ul>
+    <li>les API de base de données</li>
+    <li>les API de système d’exploitation</li>
+    <li>les API de bibliothèques de code</li>
+    <li>
+      les API JavaScript (<a
+        target="_blank"
+        href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API"
+        >Fetch</a
+      >,
+      <a
+        target="_blank"
+        href="https://developer.mozilla.org/en-US/docs/Web/API/History_API"
+        >History</a
+      >,
+      <a
+        target="_blank"
+        href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API"
+        >Web Storage</a
+      >, etc.)
+    </li>
+    <li>les API de services web</li>
+  </ul>
+
+  <p>
+    Lorsque l’on parle d’API <strong>REST</strong>, on fait généralement
+    référence à des services web qui permettent à des systèmes informatiques
+    d’échanger des données via le protocole HTTP.
+  </p>
+
+  <h3>REST</h3>
+
+  <p>
+    <a target="_blank" href="https://en.wikipedia.org/wiki/REST">REST</a> (<em
+      ><strong>RE</strong>presentational <strong>S</strong>tate
+      <strong>T</strong>ransfer</em
+    >) est un style d’architecture pour la conception de services web. Les API
+    REST utilisent les principes fondamentaux du protocole HTTP (<em
+      >Hypertext Transfer Protocol</em
+    >), qui est le protocole de communication de base d’Internet.
+  </p>
+
+  <h2>Caractéristiques clés d’une API REST</h2>
+
+  <h3>Ressources</h3>
+
+  <p>
+    Les données ou services exposés par une API REST sont représentés comme des
+    ressources. Chaque ressource est identifiée de manière unique par une URI
+    (Uniform Resource Identifier).
+  </p>
+
+  <h3>Opérations standardisées</h3>
+
+  <p>
+    Les actions sur les ressources sont effectuées en utilisant les méthodes
+    <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/HTTP"
+      >HTTP</a
+    >
+    standard, telles que :
+  </p>
+
+  <ul>
+    <li><strong>GET</strong> pour récupérer des données,</li>
+    <li><strong>POST</strong> pour créer de nouvelles ressources,</li>
+    <li><strong>PUT</strong> pour mettre à jour des ressources existantes,</li>
+    <li><strong>DELETE</strong> pour supprimer des ressources.</li>
+  </ul>
+
+  <h3>Stateless (sans état)</h3>
+
+  <p>
+    Chaque requête du client au serveur contient toutes les informations
+    nécessaires pour comprendre et traiter la demande. Le serveur ne conserve
+    pas d’informations sur l’état du client entre les requêtes.
+  </p>
+
+  <h3>Représentation des ressources</h3>
+
+  <p>
+    Les données échangées entre le client et le serveur sont généralement au
+    format <a target="_blank" href="https://www.json.org">JSON</a> (<em
+      >JavaScript Object Notation</em
+    >) ou
+    <a
+      target="_blank"
+      href="https://developer.mozilla.org/en-US/docs/Glossary/XML"
+      >XML</a
+    >
+    (<em>eXtensible Markup Language</em>). Ces représentations décrivent l’état
+    de la ressource à un moment donné.
+  </p>
+
+  <p>
+    L’utilisation de ces principes permet aux API REST d’être simples,
+    évolutives, et facilement compréhensibles. Elles sont largement utilisées
+    pour le développement d’applications web et mobiles, ainsi que pour
+    l’intégration de services et la création d’architectures distribuées.
+  </p>
+
+  <h3>Notes</h3>
+
+  <p>
+    Le terme API REST est fréquemment utilisé pour désigner des API web qui
+    respectent partiellement ou superficiellement les principes de REST, mais il
+    est important de noter que de nombreuses API qui se disent REST ne
+    respectent pas tous les principes de REST.
+  </p>
+
+  <h2>Alternatives à REST</h2>
+
+  <p>
+    Il existe d’autres styles d’architecture pour les services web, tels que
+    <strong>SOAP</strong> (<em>Simple Object Access Protocol</em>), qui est un
+    protocole basé sur XML, et <strong>GraphQL</strong>, qui est une
+    spécification de requêtes et de manipulation de données.
+  </p>
+
+  <h2>Concepts avancés</h2>
+
+  <ul>
+    <li>
+      contractualisation d’une API avec
+      <a target="_blank" href="https://www.openapis.org">OpenAPI</a>
+      (méthodologie <em>Design First</em>)
+    </li>
+    <li>
+      génération de code à partir d’une spécification OpenAPI (<a
+        target="_blank"
+        href="https://openapi-generator.tech"
+        >OpenAPI Generator</a
+      >)
+    </li>
+  </ul>
+</article>

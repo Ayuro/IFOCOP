@@ -1,0 +1,72 @@
+doctype html
+head
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+  meta(name='description' content='')
+  meta(name='author' content='')
+  title FranceFestival
+  // Favicon
+  link(rel='icon' type='image/x-icon' href='assets/favicon.ico')
+  link(rel='apple-touch-icon' sizes='76x76' href='assets/apple-touch-icon.png')
+  link(rel='icon' type='image/png' sizes='32x32' href='assets/favicon-32x32.png')
+  link(rel='icon' type='image/png' sizes='16x16' href='assets/favicon-16x16.png')
+  link(rel='manifest' href='assets/site.webmanifest')
+  link(rel='mask-icon' href='assets/safari-pinned-tab.svg' color='#5bbad5')
+  meta(name='msapplication-TileColor' content='#da532c')
+  meta(name='theme-color' content='#ffffff')
+  // Core theme CSS (includes Bootstrap)
+  link(href='css/styles.css' rel='stylesheet')
+  // Mon CSS Custom rien qu'à moi
+  link(href='css/perso.css' rel='stylesheet')
+// Responsive navbar
+nav.navbar.navbar-expand-lg.bg-peach
+  .container
+    a.navbar-brand(href='#')
+      img(src='assets/logo-France-Festival.png' alt='Logo France Festival' height="200px" widght="200px")
+      |  France
+      |           Festival
+    button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+      span.navbar-toggler-icon
+    #navbarSupportedContent.collapse.navbar-collapse
+      ul.navbar-nav.ms-auto.mb-2.mb-lg-0
+        li.nav-item
+          a.nav-link.active(aria-current='page' href='/') Accueil
+        li.nav-item
+          a.nav-link(href='/liste') Liste
+        li.nav-item
+          a.nav-link(href='/carte') Carte
+// Page content
+.container
+  .mt-5
+    h1 France Festival - d&eacute;mo de cours Ifocop
+    p
+      | Je r&eacute;cup&egrave;re un jeu de donn&eacute;es GeoJSON sur :
+      | https://www.data.gouv.fr/fr/datasets/lisdes-festivals-en-france/
+    p
+      | Je prends un th&egrave;me de base Bootstrap ici :
+      | https://startbootstrap.com/template/bare
+    p Editeur d&apos;image en ligne gratuit: https://www.photopea.com/
+    p
+      | G&eacute;n&eacute;rateur de favicon et fichiers associ&eacute;s :
+      | https://realfavicongenerator.net/
+    h2 initialisation du projet
+    code npm init
+    p Installation de d&eacute;pendances
+    code npm install express
+    br
+    code npm install mongodb
+    br
+    code npm install pug
+    br
+    code npm install nodemon
+    br
+    code npm install dotenv
+    p et tout autre envie irr&eacute;sistible
+    p On cr&eacute;&eacute; notre index.js
+    p
+      | On importe la base de donn&eacute;es dans mongo (apr&egrave;s avoir adapt&eacute; le format
+      | du fichier sinon on avait un seul document avec un tableau)
+// Bootstrap core JS
+script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js')
+// Core theme JS
+script(src='js/scripts.js')

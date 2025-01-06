@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>JavaScript : Exercice 7</title>
+		<script>
+			/*********************************
+			***********PRESENTATION***********
+			**********************************
+				Jusqu'à ES5 on disposait des options suivantes pour parcourir les propriétés d'un objet :
+
+				** for...in
+					Il parcourt toutes les propriétés énumérables de l'objet et de sa chaîne de prototype.
+
+				** Object.keys(obj)
+					Il renvoie un tableau des clés des propriétés propres énumérables de l'objet fourni.
+
+				******************
+
+				ES6 propose 2 nouvelles méthodes sur l'objet `Object` :
+
+				** Object.entries(obj)
+					Il renvoie un tableau de paires [clé, valeur] des propriétés propres énumérables de l'objet fourni.
+
+				** Object.values(obj)
+					Il renvoie un tableau des valeurs des propriétés propres énumérables de l'objet fourni.
+
+				Exemple :
+
+				ES6------------------------------------------------------
+				const obj = Object.assign(
+					Object.create({ // objet contenant le prototype
+					d: 42
+					}),
+					{ // objet contenant les propriétés propres
+					a: 1,
+					b: 2,
+					c: 3
+					}
+				);
+				console.log(Object.values(obj)); // [1, 2, 3]
+				console.log(Object.entries(obj)); // [["a", 1], ["b", 2], ["c", 3]]
+				----------------------------------------------------------
+			*/
+
+			/*********************************
+			*************EXERCICE*************
+			**********************************
+
+				Créez un objet qui représente une classe (d'élèves). Cet objet est vide. Nous le renseignerons plus tard.
+				Créez une objet qui représente une classe spécialisée à partir de l'objet précédent qui fera donc office de prototype ( pensez à utilisez Object.create() ).
+				La classe spécialisée contient 16 propriétés. Chaque propriété est le nom de l'élève et a pour valeur son numéro de sécurité sociale.
+				
+				Ajoutez 2 méthodes dans le prototype de la classe spécialisée. La classe (d'élèves) contient donc 2 méthodes :
+				- La première, si elle est exécutée, affiche successivement, dans la console, la liste des numéros de sécurité sociale de  chaque élève de la classe.
+				- La deuxième, si elle est exécutée, affiche, dans la console, pour chaque élève de la classe : "Je m'appelle X et mon numéro de sécurité sociale est : Y" (ou X est le nom de l'élève et Y son numéro de  sécurité sociale).
+
+				N.B : Pensez à utiliser le mot-clé this pour faire référence à l'objet dans lequel les méthodes sont exécutées.
+			*/
+		</script>
+	</head>
+	<body>
+		<h1>Mon nouveau document</h1>
+		<p>Premier paragraphe</p>
+		<p>Deuxième paragraphe</p>
+		<noscript>
+			<p>Veuillez activer JavaScript</p>
+		</noscript>
+	</body>
+</html>

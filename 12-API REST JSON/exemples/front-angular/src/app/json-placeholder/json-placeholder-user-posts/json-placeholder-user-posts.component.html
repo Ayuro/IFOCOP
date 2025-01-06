@@ -1,0 +1,30 @@
+@if ( posts$ | async; as posts ) {
+
+<!--  -->
+
+@for (post of posts; track post.id) {
+
+<h3>{{ post.title }}</h3>
+<p>{{ post.body }}</p>
+
+}
+
+<!--  -->
+
+} @else {
+
+<!--  -->
+
+@if(loading) {
+<div>
+  <app-loading [message]="'Chargement...'" />
+</div>
+}
+<!--  -->
+
+@if(error) {
+<div>{{ error }}</div>
+}
+
+<!--  -->
+}

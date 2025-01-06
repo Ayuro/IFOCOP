@@ -1,0 +1,6 @@
+extends ../layouts/layout.pug
+block content
+  h3 Liste des utilisateurs inscrits :
+  ul
+    each user in users
+      li= user

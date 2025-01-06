@@ -1,0 +1,16 @@
+:host {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: #09f;
+  color: #fff;
+  padding: 1rem;
+}
+
+.title {
+  font-size: 1.5rem;
+}
+
+.active {
+  font-weight: bold;
+}

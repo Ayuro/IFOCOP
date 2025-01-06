@@ -1,0 +1,17 @@
+<div class="content-wrapper">
+  <header>
+    <h1>Restaurants de New York</h1>
+
+    <app-section-menu [links]="links" />
+  </header>
+
+  <div class="content">
+    <router-outlet />
+  </div>
+</div>
+
+<footer>
+  @if (status$ | async; as status) {
+  <p>{{ status.name }} &middot; v{{ status.version }}</p>
+  }
+</footer>

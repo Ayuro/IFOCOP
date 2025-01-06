@@ -1,0 +1,19 @@
+extends ../layouts/layout.pug
+block append css 
+  link(rel="stylesheet", href="/style/login.css")
+block content
+  if username
+    p Bonjour #{username}, merci de vous connecter :
+  else
+    p Merci de vous connecter :
+  form#login
+    label(for='email') E-mail
+    input#email(type="email", name="email")
+    label(for='nickname') Mot de passe
+    input#password(type="password", name="password")
+    button#login-submit(type="submit") Envoyer
+  div#notificationDiv
+    p#notificationMessage
+  script(src="/script/login.js")
+
+  //- AJOUTER UNE LIEN VERS LA PAGE DE CREATION DE COMPTE POUR LES NOUVEAUX UTILISATEURS

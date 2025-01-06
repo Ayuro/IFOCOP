@@ -1,0 +1,23 @@
+{
+  "name": "avec-socket.io-et-express",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Sami Radi",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.6"
+  },
+  "dependencies": {
+    "express": "^4.21.0",
+    "pug": "^3.0.3",
+    "puppeteer": "^23.4.0",
+    "socket.io": "^4.7.5"
+  },
+  "description": ""
+}
